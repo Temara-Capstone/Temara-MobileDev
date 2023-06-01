@@ -5,32 +5,43 @@
 
     <Transition
         motion:constraintSetEnd="@+id/end"
-        motion:constraintSetStart="@id/start"
-        motion:duration="607">
+        motion:constraintSetStart="@id/start">
        <KeyFrameSet>
        </KeyFrameSet>
-        <OnSwipe motion:dragDirection="dragLeft"
-            motion:maxAcceleration="3.52" />
+        <OnSwipe motion:dragDirection="dragLeft" />
     </Transition>
 
     <ConstraintSet android:id="@+id/start">
-        <Constraint
-            android:id="@+id/tvDescWelcome"
-            android:layout_width="314dp"
-            android:layout_height="169dp"
-            android:layout_marginEnd="35dp"
-            motion:layout_constraintTop_toBottomOf="@id/ivLogo"
-            motion:layout_constraintLeft_toLeftOf="@id/ivLogo"
-            motion:layout_constraintRight_toRightOf="@id/ivDescWelcome1"
-            android:layout_marginStart="58dp" />
         <Constraint
             android:id="@+id/ivProgress1"
             android:layout_width="50dp"
             android:layout_height="10dp"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintTop_toBottomOf="@id/tvDescWelcome1"
-            motion:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginStart="60dp" >
+            android:layout_marginBottom="35dp"
+            motion:layout_constraintLeft_toLeftOf="@id/ivLogo"
+            android:layout_marginStart="15dp" >
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="1" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/ivProgress2"
+            motion:layout_constraintLeft_toRightOf="@id/ivProgress1"
+            android:layout_width="50dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="13dp"
+            motion:layout_constraintTop_toTopOf="@id/ivProgress1" >
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="0" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/ivProgress3"
+            motion:layout_constraintLeft_toRightOf="@id/ivProgress2"
+            android:layout_width="50dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="13dp"
+            motion:layout_constraintTop_toTopOf="@id/ivProgress2" >
             <CustomAttribute
                 motion:attributeName="crossfade"
                 motion:customFloatValue="0" />
@@ -39,20 +50,17 @@
 
     <ConstraintSet android:id="@+id/end">
         <Constraint
-            android:id="@+id/tvDescWelcome"
-            android:layout_width="314dp"
-            android:layout_height="169dp"
-            motion:layout_constraintTop_toBottomOf="@id/ivLogo"
-            motion:layout_constraintBottom_toTopOf="@+id/ivDescWelcome1"
-            motion:layout_constraintEnd_toStartOf="parent" />
-        <Constraint
-            android:layout_height="220dp"
-            android:layout_marginTop="10dp"
-            motion:layout_constraintLeft_toLeftOf="parent"
-            android:layout_width="337dp"
-            motion:layout_constraintTop_toBottomOf="@id/tvDescWelcome"
-            motion:layout_constraintEnd_toStartOf="parent"
-            android:id="@+id/ivDescWelcome1" />
+            android:id="@+id/ivProgress1"
+            android:layout_width="50dp"
+            android:layout_height="10dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="35dp"
+            motion:layout_constraintLeft_toLeftOf="@id/ivLogo"
+            android:layout_marginStart="15dp" >
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="0" />
+        </Constraint>
         <Constraint
             android:id="@+id/ivProgress2"
             motion:layout_constraintLeft_toRightOf="@id/ivProgress1"
@@ -64,5 +72,84 @@
                 motion:attributeName="crossfade"
                 motion:customFloatValue="1" />
         </Constraint>
+        <Constraint
+            android:id="@+id/ivProgress3"
+            motion:layout_constraintLeft_toRightOf="@id/ivProgress2"
+            android:layout_width="50dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="13dp"
+            motion:layout_constraintTop_toTopOf="@id/ivProgress2">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="0" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/Menu1"
+            android:layout_width="314dp"
+            android:layout_height="169dp"
+            motion:layout_constraintVertical_bias="0.3"
+            motion:layout_constraintTop_toBottomOf="@id/ivLogo"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="parent"
+            motion:layout_constraintEnd_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/Menu2"
+            android:layout_width="314dp"
+            android:layout_height="wrap_content"
+            motion:layout_constraintRight_toRightOf="parent"
+            motion:layout_constraintVertical_bias="0.3"
+            motion:layout_constraintTop_toBottomOf="@id/ivLogo"
+            motion:layout_constraintLeft_toLeftOf="parent" />
     </ConstraintSet>
+    <ConstraintSet
+        android:id="@+id/Menu2"
+        motion:deriveConstraintsFrom="@+id/end" >
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="parent"
+            android:layout_width="314dp"
+            motion:layout_constraintTop_toBottomOf="@id/ivLogo"
+            motion:layout_constraintEnd_toStartOf="parent"
+            android:id="@+id/Menu2" />
+        <Constraint
+            android:id="@+id/ivProgress3"
+            motion:layout_constraintLeft_toRightOf="@id/ivProgress2"
+            android:layout_width="50dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="13dp"
+            motion:layout_constraintTop_toTopOf="@id/ivProgress2" >
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="1" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/ivProgress1"
+            android:layout_width="50dp"
+            android:layout_height="10dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="35dp"
+            motion:layout_constraintLeft_toLeftOf="@id/ivLogo"
+            android:layout_marginStart="15dp" >
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="0" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/ivProgress2"
+            motion:layout_constraintLeft_toRightOf="@id/ivProgress1"
+            android:layout_width="50dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="13dp"
+            motion:layout_constraintTop_toTopOf="@id/ivProgress1" >
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="0" />
+        </Constraint>
+    </ConstraintSet>
+    <Transition
+        motion:constraintSetStart="@+id/end"
+        motion:constraintSetEnd="@+id/Menu2" >
+        <OnSwipe motion:dragDirection="dragLeft" />
+    </Transition>
 </MotionScene>
