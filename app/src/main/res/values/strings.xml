@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">temara</string>
     <string name="desc_splash">Image Logo For Splash Activity</string>
+    <string name="welcome_desc">Terkadang, Kita butuh seseorang untuk bicara</string>
+    <string name="desc_welcome">Bicara adalah salah satu cara terbaik untuk mengurangi beban emosional yang kita rasakan. Namun, tidak selalu mudah untuk menemukan seseorang yang dapat kita percayai untuk membicarakan masalah kita. Kadang-kadang, kita takut untuk berbicara karena takut diabaikan, dihakimi, atau dicap sebagai lemah.</string>
+    <string name="masuk">Masuk</string>
 </resources>
