@@ -11,4 +11,12 @@
     <string name="welcome">Selamat Datang</string>
     <string name="desc_welcome5">Kamu belum punya akun?</string>
     <string name="desctologin">Daftar di sini yuk</string>
+    <string name="email">Email</string>
+    <string name="email_desc">Masukkan Email Anda</string>
+    <string name="check_valid_email">Tolong masukin email yang benar ya!</string>
+    <string name="email_empty">Maaf, emailnya tidak boleh kosong.</string>
+    <string name="password">Kata Sandi</string>
+    <string name="password_minimum">Minimal Password 8 Karakter</string>
+    <string name="password_empty">Maaf, password tidak boleh kosong</string>
+    <string name="login">Masuk</string>
 </resources>

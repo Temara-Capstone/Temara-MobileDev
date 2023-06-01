@@ -28,9 +28,9 @@ class EmailEditText : CustomEditText {
     private fun init() {
         iconDrawable = ContextCompat.getDrawable(context, R.drawable.ic_email) as Drawable
         setEditTextDrawable(iconDrawable)
-        compoundDrawablePadding = 24
+        compoundDrawablePadding = 20
 
-        hint = resources.getString(R.string.email)
+        hint = resources.getString(R.string.email_desc)
 
         addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
