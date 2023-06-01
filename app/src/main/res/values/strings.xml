@@ -19,4 +19,6 @@
     <string name="password_minimum">Minimal Password 8 Karakter</string>
     <string name="password_empty">Maaf, password tidak boleh kosong</string>
     <string name="login">Masuk</string>
+    <string name="desc_welcome6">Kamu sudah punya akun?</string>
+    <string name="desclogin">Masuk dulu yuk!</string>
 </resources>
