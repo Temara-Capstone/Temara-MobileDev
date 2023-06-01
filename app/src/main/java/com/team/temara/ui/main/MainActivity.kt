@@ -1,4 +1,4 @@
-package com.team.temara
+package com.team.temara.ui.main
 
 class MainActivity {
 }

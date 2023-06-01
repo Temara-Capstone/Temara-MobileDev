@@ -146,6 +146,23 @@
                 motion:attributeName="crossfade"
                 motion:customFloatValue="0" />
         </Constraint>
+        <Constraint
+            android:id="@+id/Menu3"
+            android:layout_width="314dp"
+            android:layout_height="wrap_content"
+            motion:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="10dp"
+            motion:layout_constraintVertical_bias="0.3"
+            motion:layout_constraintTop_toBottomOf="@id/ivLogo"
+            motion:layout_constraintLeft_toLeftOf="parent" />
+        <Constraint
+            android:id="@+id/btnToLogin"
+            android:layout_width="90dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="21dp"
+            motion:layout_constraintTop_toTopOf="@id/ivProgress3"
+            motion:layout_constraintLeft_toRightOf="@id/ivProgress3"
+            motion:layout_constraintBottom_toBottomOf="@id/ivProgress3" />
     </ConstraintSet>
     <Transition
         motion:constraintSetStart="@+id/end"
