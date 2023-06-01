@@ -8,4 +8,7 @@
     <string name="desc_welcome3">Tenangkan dirimu, kami disini ada untukmu untuk berbicara tanpa kamu merasa takut dihakimi atau khawatir.</string>
     <string name="title_welcome">Kamu tidak sendirian!</string>
     <string name="desc_welcome4">Kamu jangan merasa sendirian, ya.  Kami disini selalu ada untuk kamu, kamu gaperlu takut untuk merasa di judge. </string>
+    <string name="welcome">Selamat Datang</string>
+    <string name="desc_welcome5">Kamu belum punya akun?</string>
+    <string name="desctologin">Daftar di sini yuk</string>
 </resources>
