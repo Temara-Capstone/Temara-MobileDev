@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@drawable/logo"
+        android:layout_marginTop="29dp"
+        android:layout_marginStart="27dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background"
+        android:contentDescription="@string/contenDesc_home"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        tools:src="@tools:sample/avatars"
+        android:layout_marginEnd="27dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ivLogo"/>
+
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/selamat_sore"
+        android:textSize="28sp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/green_500"
+        android:layout_marginStart="12dp"
+        android:fontFamily="@font/epilogue_medium"
+        app:layout_constraintLeft_toLeftOf="@id/ivLogo"
+        app:layout_constraintTop_toBottomOf="@id/ivLogo"
+        />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/name_user"
+        android:fontFamily="@font/epilogue_bold"
+        android:textSize="28sp"
+        android:textColor="@color/green_500"
+        app:layout_constraintLeft_toLeftOf="@id/tvWelcome"
+        app:layout_constraintTop_toBottomOf="@id/tvWelcome"/>
+
+    <TextView
+        android:id="@+id/tvDescHome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/desc_home"
+        android:textColor="@color/green_500"
+        android:fontFamily="@font/epilogue_medium"
+        android:layout_marginTop="5dp"
+        app:layout_constraintLeft_toLeftOf="@id/tvName"
+        app:layout_constraintTop_toBottomOf="@id/tvName"
+        />
+    
+    <ImageView
+        android:id="@+id/btnHappy"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:src="@drawable/happy"
+        android:layout_marginTop="16dp"
+        app:layout_constraintLeft_toLeftOf="@id/tvDescHome"
+        app:layout_constraintTop_toBottomOf="@id/tvDescHome"/>
+
+    <TextView
+        android:id="@+id/tvHappy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/senang"
+        android:textSize="12sp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/epilogue_medium"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/btnHappy"
+        app:layout_constraintStart_toStartOf="@id/btnHappy"
+        app:layout_constraintEnd_toEndOf="@id/btnHappy"/>
+
+    <ImageView
+        android:id="@+id/btnSad"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:src="@drawable/Sedih"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintLeft_toRightOf="@id/btnHappy"
+        app:layout_constraintTop_toBottomOf="@id/tvDescHome"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/sedih"
+        android:textSize="12sp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/epilogue_medium"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/btnSad"
+        app:layout_constraintStart_toStartOf="@id/btnSad"
+        app:layout_constraintEnd_toEndOf="@id/btnSad"/>
+
+    <ImageView
+        android:id="@+id/btnAngry"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:src="@drawable/angry"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintLeft_toRightOf="@id/btnSad"
+        app:layout_constraintTop_toBottomOf="@id/tvDescHome"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/angry"
+        android:textSize="12sp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/epilogue_medium"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/btnAngry"
+        app:layout_constraintStart_toStartOf="@id/btnAngry"
+        app:layout_constraintEnd_toEndOf="@id/btnAngry"/>
+
+    <ImageView
+        android:id="@+id/btnFeelBad"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:src="@drawable/feelbad"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintLeft_toRightOf="@id/btnAngry"
+        app:layout_constraintTop_toBottomOf="@id/tvDescHome"/>
+
+    <TextView
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:text="@string/feelbad"
+        android:textSize="12sp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/epilogue_medium"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/btnFeelBad"
+        app:layout_constraintStart_toStartOf="@id/btnFeelBad"
+        app:layout_constraintEnd_toEndOf="@id/btnFeelBad"/>
+
+
+    <TextView
+        android:id="@+id/tvQuotes"
+        android:layout_width="341dp"
+        android:layout_height="89dp"
+        android:background="@drawable/rectagle_home"
+        android:layout_marginTop="20dp"
+        android:text="@string/preview_quotes"
+        android:maxLines="3"
+        android:textSize="12sp"
+        android:lineSpacingExtra="5dp"
+        android:padding="18dp"
+        android:fontFamily="@font/epilogue_regular"
+        app:layout_constraintTop_toBottomOf="@id/tvHappy"
+        app:layout_constraintStart_toStartOf="@id/tvDescHome"
+        app:layout_constraintEnd_toEndOf="@id/btnFeelBad"
+        app:drawableEndCompat="@drawable/kutipan" />
+
+    <TextView
+        android:id="@+id/homeArticle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/recommend_article"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/epilogue_medium"
+        android:textColor="@color/green_500"
+        app:layout_constraintStart_toStartOf="@id/tvName"
+        app:layout_constraintTop_toBottomOf="@id/tvQuotes"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRecArticle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="10dp"
+        tools:listitem="@layout/article_list_item"
+        app:layout_constraintTop_toBottomOf="@id/homeArticle"
+        app:layout_constraintStart_toStartOf="@id/tvQuotes"
+        app:layout_constraintEnd_toEndOf="@id/tvQuotes"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/welcome_activity_scene">
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/logo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Menu1"
+        android:layout_width="314dp"
+        android:layout_height="120dp"
+        android:fontFamily="@font/montserratbold"
+        android:text="@string/welcome_desc"
+        android:textColor="@color/green"
+        android:textSize="30sp"
+        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivLogo" />
+
+    <ImageView
+        android:id="@+id/ivDescWelcome1"
+        android:layout_width="300dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/peopletalk"
+        android:layout_marginStart="-50dp"
+        app:layout_constraintLeft_toLeftOf="@id/Menu1"
+        app:layout_constraintTop_toBottomOf="@id/Menu1" />
+
+    <TextView
+        android:id="@+id/tvDescWelcome1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/epilogue_medium"
+        android:lineSpacingMultiplier="1.2"
+        android:text="@string/desc_welcome"
+        android:textColor="@color/green"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="@id/Menu1"
+        app:layout_constraintRight_toRightOf="@id/ivDescWelcome1"
+        app:layout_constraintTop_toBottomOf="@id/ivDescWelcome1" />
+
+    <TextView
+        android:id="@+id/Menu2"
+        android:layout_width="314dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserratbold"
+        android:text="@string/desc_welcome2"
+        android:textColor="@color/green"
+        android:layout_marginTop="10dp"
+        android:textSize="36sp"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintLeft_toLeftOf="@id/ivLogo"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivLogo" />
+
+    <ImageView
+        android:id="@+id/ivDescWelcome2"
+        android:layout_width="300dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/relax"
+        android:layout_marginStart="-50dp"
+        app:layout_constraintLeft_toLeftOf="@id/Menu2"
+        app:layout_constraintTop_toBottomOf="@id/Menu2" />
+
+    <TextView
+        android:id="@+id/tvDescWelcome2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/epilogue_medium"
+        android:lineSpacingMultiplier="1.2"
+        android:text="@string/desc_welcome3"
+        android:textColor="@color/green"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="@id/Menu2"
+        app:layout_constraintRight_toRightOf="@id/ivDescWelcome2"
+        app:layout_constraintTop_toBottomOf="@id/ivDescWelcome2" />
+
+    <TextView
+        android:id="@+id/Menu3"
+        android:layout_width="314dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserratbold"
+        android:text="@string/title_welcome"
+        android:textColor="@color/green"
+        android:layout_marginTop="10dp"
+        android:textSize="36sp"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivLogo" />
+
+    <ImageView
+        android:id="@+id/ivDescWelcome3"
+        android:layout_width="300dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/judge"
+        android:layout_marginStart="-50dp"
+        app:layout_constraintLeft_toLeftOf="@id/Menu3"
+        app:layout_constraintTop_toBottomOf="@id/Menu3" />
+
+    <TextView
+        android:id="@+id/tvDescWelcome3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/epilogue_medium"
+        android:lineSpacingMultiplier="1.2"
+        android:text="@string/desc_welcome4"
+        android:textColor="@color/green"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="@id/Menu3"
+        app:layout_constraintRight_toRightOf="@id/ivDescWelcome3"
+        app:layout_constraintTop_toBottomOf="@id/ivDescWelcome3" />
+
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/ivProgress1"
+        android:layout_width="50dp"
+        android:layout_height="10dp"
+        app:altSrc="@drawable/rectagle_active"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/ivLogo"
+        app:srcCompat="@drawable/rectagle_inactive"
+        app:tint="@color/green_500" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/ivProgress2"
+        android:layout_width="50dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="13dp"
+        app:srcCompat="@drawable/rectagle_inactive"
+        app:tint="@color/green_500"
+        app:altSrc="@drawable/rectagle_active"
+        app:layout_constraintLeft_toRightOf="@id/ivProgress1"
+        app:layout_constraintTop_toTopOf="@id/ivProgress1" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/ivProgress3"
+        android:layout_width="50dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="13dp"
+        app:srcCompat="@drawable/rectagle_inactive"
+        app:tint="@color/green_500"
+        app:altSrc="@drawable/rectagle_active"
+        app:layout_constraintLeft_toRightOf="@id/ivProgress2"
+        app:layout_constraintTop_toTopOf="@id/ivProgress2" />
+
+    <Button
+        android:id="@+id/btnToLogin"
+        android:layout_width="90dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="21dp"
+        android:background="@drawable/rectagle"
+        android:fontFamily="@font/epilogue_bold"
+        android:visibility="gone"
+        android:text="@string/masuk"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/ivProgress3"
+        app:layout_constraintLeft_toRightOf="@id/ivProgress3"
+        app:layout_constraintTop_toTopOf="@id/ivProgress3" />
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
