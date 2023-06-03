@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/rlBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green_500"
+        android:padding="81dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@drawable/back"
+        android:backgroundTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="18dp"/>
+
+    <TextView
+        android:id="@+id/tvArticle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/article"
+        android:textSize="20sp"
+        android:fontFamily="@font/epilogue_bold"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toRightOf="@id/btnBack"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="25dp"/>
+
+    <ImageView
+        android:id="@+id/ivArticle"
+        android:layout_width="match_parent"
+        android:layout_height="198dp"
+        tools:src="@tools:sample/backgrounds/scenic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rlBackground"
+        />
+
+    <TextView
+        android:id="@+id/tvTitleArticle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivArticle"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:textSize="20sp"
+        android:fontFamily="@font/montserratbold"
+        android:text="@string/preview_article_title"
+        />
+
+    <ImageView
+        android:id="@+id/ivAdminTemara"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleArticle"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="6dp"
+        android:src="@drawable/logo"/>
+
+    <TextView
+        android:id="@+id/tvAdminTemara"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/admin_temara"
+        android:textColor="@color/green_500"
+        android:fontFamily="@font/epilogue_regular"
+        app:layout_constraintLeft_toRightOf="@id/ivAdminTemara"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleArticle" />
+
+    <TextView
+        android:id="@+id/tvDescArticle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="18dp"
+        android:fontFamily="@font/epilogue_regular"
+        android:text="@string/preview_desc_article_full"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAdminTemara" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
