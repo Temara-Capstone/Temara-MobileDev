@@ -60,7 +60,6 @@
         android:layout_height="182dp"
         android:layout_marginTop="10dp"
         app:cardCornerRadius="5dp"
-        android:visibility="gone"
         app:layout_constraintStart_toStartOf="@id/tvDescForum"
         app:layout_constraintTop_toBottomOf="@id/tvDescForum"
         app:layout_constraintEnd_toEndOf="@id/tvDescForum"
