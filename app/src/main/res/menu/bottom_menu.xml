@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:title="@string/home" android:icon="@drawable/ic_home"/>
     <item android:title="@string/article" android:icon="@drawable/ic_article"/>
     <item android:icon="@drawable/ic_temara"
-        android:title="Chat" />
+        android:title="@string/chat" />
     <item android:icon="@drawable/ic_forum" android:title="@string/forum"/>
     <item android:icon="@drawable/ic_user" android:title="@string/profile"/>
 </menu>

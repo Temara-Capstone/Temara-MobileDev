@@ -56,4 +56,8 @@
     <string name="pengguna_temara_anonim">Pengguna Temara (Anonim)</string>
     <string name="comment_content">I know what you feel ka, semangat terus ya kak, kamu pasti kuat dalam menghadapi semua cobaan yang lagi kakak hadapi. </string>
     <string name="komentar_sebagai_anonim">Komentar sebagai anonim...</string>
+    <string name="buat_postingan">Buat Postingan</string>
+    <string name="send">Kirim</string>
+    <string name="hint_post">Apa yang kamu pikirkan?</string>
+    <string name="chat">Chat</string>
 </resources>
