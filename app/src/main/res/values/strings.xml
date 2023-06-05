@@ -60,4 +60,9 @@
     <string name="send">Kirim</string>
     <string name="hint_post">Apa yang kamu pikirkan?</string>
     <string name="chat">Chat</string>
+    <string name="cerita_yuk">Cerita yuk,</string>
+    <string name="chat_desc">Kamu mau bercerita dengan siapa nih kira-kira?</string>
+    <string name="informasi_pengguna">Informasi Pengguna</string>
+    <string name="information">Temara adalah layanan Konsultasi dan Dukungan bagi pengguna yang mengalami masalah kesehatan mental. Temara berkomitmen untuk menjaga dan melindungi privasi data pengguna sebaik mungkin. Pengguna diharapkan untuk tidak menyebarkan identitas mereka kepada pengguna yang tidak dikenal. Gunakan layanan yang disediakan oleh Temara sebagai tempat untuk berbagi cerita dan saling mendukung. Temara berharap dapat menjadi wadah yang membantu teman-teman yang mengalami masalah kesehatan mental.</string>
+    <string name="user_info">Informasi Pengguna</string>
 </resources>

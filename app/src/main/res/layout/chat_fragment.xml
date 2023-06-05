@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="29dp"
+        android:background="@drawable/logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivUser"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="27dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ivLogo"
+        tools:src="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background"
+        android:contentDescription="@string/contenDesc_home"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/cerita_yuk"
+        android:textSize="28sp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/green_500"
+        android:layout_marginStart="12dp"
+        android:fontFamily="@font/epilogue_medium"
+        app:layout_constraintLeft_toLeftOf="@id/ivLogo"
+        app:layout_constraintTop_toBottomOf="@id/ivLogo"
+        />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/name_user"
+        android:fontFamily="@font/epilogue_bold"
+        android:textSize="28sp"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/green_600"
+        app:layout_constraintTop_toTopOf="@id/tvWelcome"
+        app:layout_constraintLeft_toRightOf="@id/tvWelcome" />
+
+    <TextView
+        android:id="@+id/tvDescChat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/chat_desc"
+        android:fontFamily="@font/epilogue_medium"
+        android:textColor="@color/green_600"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@id/tvWelcome"
+        app:layout_constraintTop_toBottomOf="@id/tvWelcome"
+        app:layout_constraintEnd_toEndOf="@id/ivUser"
+
+        />
+
+    <Button
+        android:id="@+id/btnInformation"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:background="@drawable/rectagle_info"
+        android:backgroundTint="@color/green_500"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/informasi_pengguna"
+        android:textAllCaps="false"
+        android:fontFamily="@font/epilogue_medium"
+        android:textColor="@color/white_10"
+        android:drawableStart="@drawable/ic_info"
+        app:layout_constraintStart_toStartOf="@id/tvDescChat"
+        app:layout_constraintTop_toBottomOf="@id/tvDescChat"/>
+
+    <TextView
+        android:id="@+id/bgBlack"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#BB000000"
+        android:focusable="true"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvShow"
+        android:layout_width="330dp"
+        android:layout_height="300dp"
+        android:backgroundTint="@color/green_500"
+        android:visibility="gone"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/btnCancel"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/ic_cancel_circle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/epilogue_medium"
+                android:text="@string/informasi_pengguna"
+                android:textColor="@color/white_10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btnCancel" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/epilogue_medium"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="2dp"
+                android:text="@string/information"
+                android:textColor="@color/white_10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/btnCancel"
+                app:layout_constraintTop_toBottomOf="@id/tvInfo" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

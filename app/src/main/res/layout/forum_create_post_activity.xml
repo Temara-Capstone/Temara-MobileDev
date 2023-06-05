@@ -51,6 +51,7 @@
         app:layout_constraintTop_toTopOf="@id/tvCreatePost"/>
 
     <EditText
+        android:id="@+id/etDesc"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/white_10"
@@ -64,6 +65,17 @@
         app:layout_constraintTop_toBottomOf="@id/colorHome"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/ivImageDesc"
+        android:layout_width="360dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="15dp"
+        tools:src="@tools:sample/avatars"
+        app:layout_constraintTop_toBottomOf="@id/etDesc"
+        app:layout_constraintStart_toStartOf="@id/etDesc"
+        app:layout_constraintEnd_toEndOf="@id/etDesc"
+        />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvComment"
