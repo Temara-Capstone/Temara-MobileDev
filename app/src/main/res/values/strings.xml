@@ -53,4 +53,7 @@
     <string name="desc_photo">Desc Photo</string>
     <string name="ruang_bicara">Ruang Bicara</string>
     <string name="_0">0</string>
+    <string name="pengguna_temara_anonim">Pengguna Temara (Anonim)</string>
+    <string name="comment_content">I know what you feel ka, semangat terus ya kak, kamu pasti kuat dalam menghadapi semua cobaan yang lagi kakak hadapi. </string>
+    <string name="komentar_sebagai_anonim">Komentar sebagai anonim...</string>
 </resources>
