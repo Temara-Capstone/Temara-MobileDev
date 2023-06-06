@@ -76,7 +76,7 @@
     <string name="ubah_kata_sandi">Ubah Kata Sandi</string>
     <string name="masukkan_kata_sandi_baru">Masukkan Kata Sandi Baru</string>
     <string name="string_password">********</string>
-    <string name="konfirmasi_kata_sandi" />
+    <string name="konfirmasi_kata_sandi">Konfirmasi Kata Sandi</string>
     <string name="desc_peduli">Kami ingin menyampaikan rasa empati dan simpati kami terhadap apa yang sedang Anda alami saat ini. Kami mengerti bahwa ini adalah masa yang sulit dan kami ingin Anda tahu bahwa kami ada di sini untuk mendukung Anda. Temara akan selalu ada untuk menemani Anda kapanpun Anda membutuhkannya.\n\nJika kami tidak dapat memberikan bantuan yang cukup untuk mengatasi kondisi Anda, kami ingin mendorong Anda untuk mencari bantuan dari Pelayanan Masyarakat atau meminta bantuan dari teman-teman Anda. Ingatlah bahwa Anda tidak sendirian dalam perjuangan ini. Kami sangat peduli dengan Anda dan ingin memastikan bahwa Anda tidak merasa kesepian.</string>
     <string name="kami_peduli_denganmu">Kami Peduli Denganmu!</string>
     <string name="user_class">Pengguna Gratis</string>
@@ -84,4 +84,5 @@
     <string name="privasi_pengguna">Privasi Pengguna</string>
     <string name="faq">FAQ</string>
     <string name="keluar">Keluar</string>
+    <string name="no_hp">Nomor Handphone</string>
 </resources>
