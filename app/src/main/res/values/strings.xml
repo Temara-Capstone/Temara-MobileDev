@@ -65,26 +65,4 @@
     <string name="informasi_pengguna">Informasi Pengguna</string>
     <string name="information">Temara adalah layanan Konsultasi dan Dukungan bagi pengguna yang mengalami masalah kesehatan mental. Temara berkomitmen untuk menjaga dan melindungi privasi data pengguna sebaik mungkin. Pengguna diharapkan untuk tidak menyebarkan identitas mereka kepada pengguna yang tidak dikenal. Gunakan layanan yang disediakan oleh Temara sebagai tempat untuk berbagi cerita dan saling mendukung. Temara berharap dapat menjadi wadah yang membantu teman-teman yang mengalami masalah kesehatan mental.</string>
     <string name="user_info">Informasi Pengguna</string>
-    <string name="user_class">Pengguna Gratis</string>
-    <string name="personal_data">Personal Data</string>
-    <string name="ubah_kata_sandi">Ubah Kata Sandi</string>
-    <string name="panduan_temara">Panduan Temara</string>
-    <string name="privasi_pengguna">Privasi Pengguna</string>
-    <string name="faq">FAQ</string>
-    <string name="keluar">Keluar</string>
-    <string name="nama_lengkap">Nama Lengkap</string>
-    <string name="pekerjaan">Pekerjaan</string>
-    <string name="pria">Pria</string>
-    <string name="jenis_kelamin">Jenis Kelamin</string>
-    <string name="perempuan">Perempuan</string>
-    <string name="wanita">Wanita</string>
-    <string name="nomor_handphone">Nomor Handphone</string>
-    <string name="no_hp">Nomor Handphone</string>
-    <string name="simpan">Simpan</string>
-    <string name="masukkan_kata_sandi_baru">Masukkan Kata Sandi Baru</string>
-    <string name="string_password">********</string>
-    <string name="konfirmasi_kata_sandi">Konfirmasi Kata Sandi</string>
-    <string name="desc_peduli">        Kami ingin menyampaikan rasa empati dan simpati kami terhadap apa yang sedang Anda alami saat ini. Kami mengerti bahwa ini adalah masa yang sulit dan kami ingin Anda tahu bahwa kami ada di sini untuk mendukung Anda. Temara akan selalu ada untuk menemani Anda kapanpun Anda membutuhkannya.
-
-        Jika kami tidak dapat memberikan bantuan yang cukup untuk mengatasi kondisi Anda, kami ingin mendorong Anda untuk mencari bantuan dari Pelayanan Masyarakat atau meminta bantuan dari teman-teman Anda. Ingatlah bahwa Anda tidak sendirian dalam perjuangan ini. Kami sangat peduli dengan Anda dan ingin memastikan bahwa Anda tidak merasa kesepian.</string>
 </resources>
