@@ -70,4 +70,7 @@
     <string name="anon_title">Chat Dengan Anonim</string>
     <string name="anon_desc">Kamu bisa dapatkan teman bicaramu melalui dengan pengguna anonim, yuk bercerita!</string>
     <string name="bot_title">Chat Dengan Bot</string>
+    <string name="type_message">Type Message</string>
+    <string name="kamu_siapa">Kamu siapa?</string>
+    <string name="end">Akhiri</string>
 </resources>
