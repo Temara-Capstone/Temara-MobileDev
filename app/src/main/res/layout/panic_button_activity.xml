@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/ic_arrow_left"
+        android:backgroundTint="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/panic_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/panic_logo"
+        app:layout_constraintStart_toStartOf="@id/btnBack"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/btnBack"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="60dp"/>
+
+    <TextView
+        android:id="@+id/tvKamiPeduli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kami Peduli Denganmu!"
+        android:textSize="16sp"
+        android:fontFamily="@font/epilogue_bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="153dp"/>
+
+    <TextView
+        android:id="@+id/tvDescPeduli"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvKamiPeduli"
+        android:layout_marginTop="48dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
+        android:text="@string/desc_peduli"
+        android:textColor="@color/black"
+        android:lineSpacingMultiplier="1.3"
+        android:fontFamily="@font/epilogue_regular"
+        android:textSize="12sp"
+        />
+
+    <Button
+        android:id="@+id/btn119"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/call_199"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDescPeduli"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/call_friend"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn119"
+        android:layout_marginTop="20dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
