@@ -26,7 +26,7 @@
         android:id="@+id/btnBack"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:background="@drawable/back"
+        android:background="@drawable/ic_arrow_left"
         android:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
