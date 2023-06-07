@@ -44,21 +44,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="120dp"
-        android:paddingTop="5dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="41dp"
         android:src="@drawable/btn_sos"
-        app:layout_constraintLeft_toRightOf="@id/tvUser"
-        app:layout_constraintStart_toStartOf="@id/tvUser"
-        app:layout_constraintTop_toTopOf="@id/tvUser" />
+        app:layout_constraintLeft_toRightOf="@id/tvUserClass"
+        app:layout_constraintStart_toStartOf="@id/tvUserClass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
         android:background="@drawable/line"
-        app:layout_constraintTop_toBottomOf="@+id/ivUser"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivUser"/>
 
     <ImageView
         android:id="@+id/ivPersonalData"
@@ -88,11 +90,14 @@
         android:id="@+id/ivArrowPersonalData"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:layout_marginStart="200dp"
+        android:layout_marginStart="220dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
         android:src="@drawable/ic_arrow_right"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintRight_toLeftOf="@id/tvPersonalData"
         app:layout_constraintStart_toStartOf="@id/tvPersonalData"
+
         app:layout_constraintTop_toTopOf="@id/ivPersonalData" />
 
     <ImageView
@@ -123,9 +128,11 @@
         android:id="@+id/ivArrowUbahSandi"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:layout_marginStart="200dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginStart="220dp"
         android:layout_marginTop="10dp"
         android:src="@drawable/ic_arrow_right"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintRight_toLeftOf="@id/tvUbahSandi"
         app:layout_constraintStart_toStartOf="@id/tvUbahSandi"
         app:layout_constraintTop_toTopOf="@id/ivUbahSandi" />
@@ -133,12 +140,11 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/line"
-        app:layout_constraintTop_toBottomOf="@+id/ivUbahSandi"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUbahSandi"/>
 
     <ImageView
         android:id="@+id/ivPanduanTemara"
@@ -168,9 +174,11 @@
         android:id="@+id/ivArrowPanduanTemara"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:layout_marginStart="200dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginEnd="50dp"
         android:layout_marginTop="8dp"
         android:src="@drawable/ic_arrow_right"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintRight_toLeftOf="@id/tvPanduanTemara"
         app:layout_constraintStart_toStartOf="@id/tvPanduanTemara"
         app:layout_constraintTop_toTopOf="@id/ivPanduanTemara" />
@@ -203,9 +211,11 @@
         android:id="@+id/ivArrowPrivasiPengguna"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:layout_marginStart="200dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginEnd="50dp"
         android:layout_marginTop="10dp"
         android:src="@drawable/ic_arrow_right"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintRight_toLeftOf="@id/tvPrivasiPengguna"
         app:layout_constraintStart_toStartOf="@id/tvPrivasiPengguna"
         app:layout_constraintTop_toTopOf="@id/ivPrivasiPengguna" />
@@ -238,9 +248,11 @@
         android:id="@+id/ivArrowFaq"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:layout_marginStart="200dp"
+        android:layout_marginStart="220dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
         android:src="@drawable/ic_arrow_right"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintRight_toLeftOf="@id/tvFaq"
         app:layout_constraintStart_toStartOf="@id/tvFaq"
         app:layout_constraintTop_toTopOf="@id/ivFaq" />

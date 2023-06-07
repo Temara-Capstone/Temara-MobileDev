@@ -1,4 +1,4 @@
-package com.team.temara.ui.profile
+package com.team.temara.ui.profile.personalData
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

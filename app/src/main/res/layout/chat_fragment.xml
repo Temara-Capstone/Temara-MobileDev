@@ -265,7 +265,7 @@
                 android:id="@+id/tvBotDesc"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Temara menyediakan layanan konsultasi melalui Bot, layanan ini bisa kamu gunakan ketika tidak ingin bercerita dengan orang lain"
+                android:text="@string/bot_desc"
                 android:layout_marginEnd="35dp"
                 android:fontFamily="@font/epilogue_medium"
                 android:textSize="11sp"
