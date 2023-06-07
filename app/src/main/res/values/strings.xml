@@ -85,12 +85,12 @@
     <string name="faq">FAQ</string>
     <string name="keluar">Keluar</string>
     <string name="no_hp">Nomor Handphone</string>
-    <string name="end">Akhiri</string>
-    <string name="konsultasi_dokter">Konsultasi Dokter</string>
+    <string name="konsultasi_dokter">Konsultasi dengan Dokter</string>
     <string name="tvDoctorDesc">Yuk, Konsultasikan dirimu dengan dokter ahli psikologi dengan harga yang murah!</string>
-    <string name="anon_title">Chat Dengan Anonym</string>
-    <string name="anon_desc">Kamu bisa dapatkan teman bicara mu melalui dengan pengguna anonim, yuk bercerita!</string>
-    <string name="bot_title">Chat Dengan Bot</string>
+    <string name="bot_title">Chat dengan Bot</string>
     <string name="bot_desc">Temara menyediakan layanan konsultasi melalui Bot, layanan ini bisa kamu gunakan ketika tidak ingin bercerita dengan orang lain</string>
+    <string name="anon_title">Chat dengan Anonim</string>
+    <string name="anon_desc">Kamu bisa dapatkan teman bicara mu melalui dengan pengguna anonim, yuk bercerita!</string>
+    <string name="end">Akhiri</string>
     <string name="kamu_siapa">Kamu Siapa?</string>
 </resources>
