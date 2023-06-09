@@ -15,8 +15,8 @@ class AuthPreferences (private val dataStore: DataStore<Preferences>) {
         it[tokenKey] ?: "null"
     } }
 
-    suspend fun setUserToken(token: String) { dataStore.edit {
-        it [this.tokenKey] = token
+    suspend fun setUserToken(bearerToken: String) { dataStore.edit {
+        it [this.tokenKey] = bearerToken
     }}
 
     suspend fun deleteUserToken() { dataStore.edit {

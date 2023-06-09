@@ -40,12 +40,13 @@ class LoginActivity : AppCompatActivity() {
                 } else {
                     loginViewModel.login(email, password).observe(this) {
                         when (it) {
+
                             is Result.Success -> {
                                 binding.ProgressBar.visibility = View.GONE
-                                val data = it.data
-                                loginViewModel.setUserToken(data.data.token)
-                                Log.d("Login Activity", "token: ${data.data.token}")
                                 val intent = Intent(this, MainActivity::class.java)
+                                val result = it.result
+                                loginViewModel.setUserToken(result.data.bearerToken)
+                                Log.d("LoginActivity", "token : ${result.data.bearerToken}")
                                 startActivity(intent)
                                 finish()
                             }

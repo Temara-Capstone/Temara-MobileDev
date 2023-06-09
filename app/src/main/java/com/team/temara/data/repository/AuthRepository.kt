@@ -27,8 +27,8 @@ class AuthRepository(
             val response = apiService.login(
                 email, password
             )
-            if (response.status) {
-                emit(Result.Error(response))
+            if (response.error) {
+                emit(Result.Error(response.status))
             } else {
                 emit(Result.Success(response))
             }
@@ -43,8 +43,8 @@ class AuthRepository(
             val response = apiService.register(
                 name, email, password
             )
-            if (response.status) {
-                emit(Result.Error(response))
+            if (response.error) {
+                emit(Result.Error(response.status))
             } else {
                 emit(Result.Success(response))
             }
@@ -54,8 +54,8 @@ class AuthRepository(
     }
 
     fun getToken(): LiveData<String> = authPreferences.getToken().asLiveData()
-    fun setUserToken(token: String) { launch(Dispatchers.IO) {
-        authPreferences.setUserToken(token)
+    fun setUserToken(bearerToken: String) { launch(Dispatchers.IO) {
+        authPreferences.setUserToken(bearerToken)
     } }
     fun deleteUserToken() { launch(Dispatchers.IO) {
         authPreferences.deleteUserToken()

@@ -10,8 +10,8 @@ class LoginViewModel(
     private val authRepository: AuthRepository,
 ) : ViewModel() {
     fun login (email: String, password: String) = authRepository.login(email, password)
-    fun setUserToken(token: String) {
-        authRepository.setUserToken(token)
+    fun setUserToken(bearerToken: String) {
+        authRepository.setUserToken(bearerToken)
     }
 
     class LoginViewModelFactory private constructor(

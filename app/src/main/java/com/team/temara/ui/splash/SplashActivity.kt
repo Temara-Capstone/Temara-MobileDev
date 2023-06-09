@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
 import com.team.temara.data.repository.AuthRepository
@@ -12,12 +13,14 @@ import com.team.temara.ui.login.LoginActivity
 import com.team.temara.ui.main.MainActivity
 import com.team.temara.ui.welcome.WelcomeActivity
 
-class SplashActivity(
-    private val authRepository: AuthRepository
-) : AppCompatActivity() {
+class SplashActivity : AppCompatActivity() {
 
     private val binding : SplashActivityBinding by lazy {
         SplashActivityBinding.inflate(layoutInflater)
+    }
+
+    private val splashViewModel: SplashViewModel by viewModels {
+        SplashViewModel.SplashViewModelFactory.getInstance(this)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,14 +33,10 @@ class SplashActivity(
 
     }
 
-    private fun checkToken(): LiveData<String> {
-        return authRepository.getToken()
-    }
-
     private fun checkSession() {
-        checkToken().observe(this) {
+        splashViewModel.checkToken().observe(this) {
             if (it == "null") {
-                val intent = Intent(this, LoginActivity::class.java)
+                val intent = Intent(this, WelcomeActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {
