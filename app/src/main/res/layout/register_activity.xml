@@ -44,7 +44,7 @@
         />
 
     <TextView
-        android:id="@+id/btnToRegister"
+        android:id="@+id/btnToLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/desclogin"
@@ -132,7 +132,7 @@
         app:layout_constraintTop_toBottomOf="@id/tvPassword"/>
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnRegister"
         android:layout_width="314dp"
         android:layout_height="48dp"
         android:text="@string/login"
