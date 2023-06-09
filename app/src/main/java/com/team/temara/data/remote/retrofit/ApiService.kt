@@ -14,7 +14,7 @@ interface ApiService {
     fun login(
         @Field("email") email: String,
         @Field("password") password: String
-    ): Call<LoginResponse>
+    ): LoginResponse
 
     @POST("register")
     @FormUrlEncoded
@@ -22,7 +22,7 @@ interface ApiService {
         @Field("name") name: String,
         @Field("email") email: String,
         @Field("password") password: String
-    ): Call<RegisterResponse>
+    ): RegisterResponse
 
 
 }

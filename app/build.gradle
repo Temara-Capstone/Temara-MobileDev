@@ -1,7 +1,5 @@
 plugins {
     id 'com.android.application'
-    id 'kotlin-kapt'
-    id 'kotlin-parcelize'
     id 'org.jetbrains.kotlin.android'
 }
 
@@ -15,6 +13,7 @@ android {
         targetSdk 33
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -27,23 +26,9 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
-        coreLibraryDesugaringEnabled = true
     }
-    sourceSets {
-        androidTest.java.srcDirs += "src/sharedTest/java"
-        test.java.srcDirs += "src/sharedTest/java"
-    }
-
     kotlinOptions {
         jvmTarget = '1.8'
-        freeCompilerArgs += ["-Xopt-in=kotlin.RequiresOptIn"]
-    }
-
-    testOptions {
-        animationsDisabled = true
-        unitTests {
-            includeAndroidResources = true
-        }
     }
     buildFeatures {
         viewBinding true
@@ -61,6 +46,10 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation "androidx.datastore:datastore-preferences:1.0.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
 
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     //socket io

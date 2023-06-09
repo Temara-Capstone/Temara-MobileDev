@@ -1,4 +1,4 @@
-package com.team.temara.Utils
+package com.team.temara.utils
 
 open class Event<out T>(private val content: T) {
 

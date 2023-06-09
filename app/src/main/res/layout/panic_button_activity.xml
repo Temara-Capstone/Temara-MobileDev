@@ -23,9 +23,8 @@
         android:src="@drawable/panic_logo"
         app:layout_constraintStart_toEndOf="@id/btnBack"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/btnBack"
         android:layout_marginTop="10dp"
-        android:layout_marginStart="60dp"/>
+        android:layout_marginStart="10dp"/>
 
     <TextView
         android:id="@+id/tvKamiPeduli"
