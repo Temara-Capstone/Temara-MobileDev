@@ -9,7 +9,7 @@ import com.team.temara.data.repository.AuthRepository
 class LoginViewModel(
     private val authRepository: AuthRepository,
 ) : ViewModel() {
-//    fun login (email: String, password: String) = authRepository.login(email, password)
+    fun login (email: String, password: String) = authRepository.login(email, password)
     fun setUserToken(token: String) {
         authRepository.setUserToken(token)
     }

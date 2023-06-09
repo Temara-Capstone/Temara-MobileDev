@@ -21,37 +21,37 @@ class AuthRepository(
     private val authPreferences: AuthPreferences
 ) : CoroutineScope {
 
-//    fun login(email: String, password: String): LiveData<Result<LoginResponse>> = liveData {
-//        emit(Result.Loading)
-//        try {
-//            val response = apiService.login(
-//                email, password
-//            )
-//            if (response.status) {
-//                emit(Result.Error(response))
-//            } else {
-//                emit(Result.Success(response))
-//            }
-//        } catch (e: Exception) {
-//            emit(Result.Error(e.message.toString()))
-//        }
-//    }
-//
-//    fun register(name: String, email: String, password: String): LiveData<Result<RegisterResponse>> = liveData {
-//        emit(Result.Loading)
-//        try {
-//            val response = apiService.register(
-//                name, email, password
-//            )
-//            if (response.status) {
-//                emit(Result.Error(response))
-//            } else {
-//                emit(Result.Success(response))
-//            }
-//        } catch (e: Exception) {
-//            emit(Result.Error(e.message.toString()))
-//        }
-//    }
+    fun login(email: String, password: String): LiveData<Result<LoginResponse>> = liveData {
+        emit(Result.Loading)
+        try {
+            val response = apiService.login(
+                email, password
+            )
+            if (response.status) {
+                emit(Result.Error(response))
+            } else {
+                emit(Result.Success(response))
+            }
+        } catch (e: Exception) {
+            emit(Result.Error(e.message.toString()))
+        }
+    }
+
+    fun register(name: String, email: String, password: String): LiveData<Result<RegisterResponse>> = liveData {
+        emit(Result.Loading)
+        try {
+            val response = apiService.register(
+                name, email, password
+            )
+            if (response.status) {
+                emit(Result.Error(response))
+            } else {
+                emit(Result.Success(response))
+            }
+        } catch (e: Exception) {
+            emit(Result.Error(e.message.toString()))
+        }
+    }
 
     fun getToken(): LiveData<String> = authPreferences.getToken().asLiveData()
     fun setUserToken(token: String) { launch(Dispatchers.IO) {
