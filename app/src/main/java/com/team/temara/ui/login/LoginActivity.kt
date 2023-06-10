@@ -46,6 +46,7 @@ class LoginActivity : AppCompatActivity() {
                                 val intent = Intent(this, MainActivity::class.java)
                                 val result = it.result
                                 loginViewModel.setUserToken(result.data.bearerToken)
+                                intent.putExtra(name_extra, result.data.name )
                                 Log.d("LoginActivity", "token : ${result.data.bearerToken}")
                                 startActivity(intent)
                                 finish()
@@ -86,6 +87,10 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+    }
+
+    companion object {
+        const val name_extra = "name"
     }
 
 }
