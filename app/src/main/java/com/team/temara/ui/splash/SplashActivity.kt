@@ -6,10 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.LiveData
-import com.team.temara.data.repository.AuthRepository
 import com.team.temara.databinding.SplashActivityBinding
-import com.team.temara.ui.login.LoginActivity
 import com.team.temara.ui.main.MainActivity
 import com.team.temara.ui.welcome.WelcomeActivity
 

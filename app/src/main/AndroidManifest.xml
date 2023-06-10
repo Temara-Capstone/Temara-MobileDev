@@ -39,7 +39,11 @@
         <activity android:name=".ui.login.LoginActivity"
             android:exported="false"/>
 
+<<<<<<< HEAD
         <activity android:name=".ui.register.RegisterActivity"
+=======
+        <activity android:name=".ui.info.InfoUserActivity"
+>>>>>>> 9443165 (update temara app)
             android:exported="false"/>
 
     </application>
