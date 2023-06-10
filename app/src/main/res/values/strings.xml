@@ -94,4 +94,6 @@
     <string name="end">Akhiri</string>
     <string name="kamu_siapa">Kamu Siapa?</string>
     <string name="register_success">Your Account was Successfully created</string>
+    <string name="password_wrong">Email atau Password salah</string>
+    <string name="error_500">Terjadi kesalahan..</string>
 </resources>
