@@ -39,6 +39,9 @@
         <activity android:name=".ui.login.LoginActivity"
             android:exported="false"/>
 
+        <activity android:name=".ui.info.InfoUserActivity"
+            android:exported="false"/>
+
     </application>
 
 
