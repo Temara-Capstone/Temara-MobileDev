@@ -116,7 +116,7 @@
         android:layout_marginTop="@dimen/_10sdp"
         android:textSize="@dimen/_10ssp"
         android:fontFamily="@font/epilogue_sembold"
-        android:text="@string/data_gender"
+        android:text="@string/gender"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.036"
         app:layout_constraintStart_toStartOf="parent"
