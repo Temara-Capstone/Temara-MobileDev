@@ -1,16 +1,20 @@
-package com.team.temara.ui.main.fragment
+package com.team.temara.ui.main.fragment.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.team.temara.databinding.ProfileFragmentBinding
-import com.team.temara.ui.login.LoginActivity
 
 class ProfileFragment : Fragment() {
     private var _binding: ProfileFragmentBinding? = null
     private val binding get() = _binding!!
+
+    private val profileFragmentViewModel: ProfileFragmentViewModel by viewModels {
+        ProfileFragmentViewModel.ProfileViewModelFactory.getInstance(requireContext())
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -21,10 +25,13 @@ class ProfileFragment : Fragment() {
         return binding.root
     }
 
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.btnLogout.setOnClickListener {
+            profileFragmentViewModel.logout()
+        }
+
     }
+
 }

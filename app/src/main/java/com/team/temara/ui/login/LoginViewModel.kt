@@ -38,7 +38,7 @@ class LoginViewModel(
                     instance ?: LoginViewModelFactory(
                         AppModule.provideAuthRepository(context)
                     )
-                }
+                }. also { instance = it }
         }
 
     }
