@@ -135,7 +135,7 @@
         android:id="@+id/btnRegister"
         android:layout_width="314dp"
         android:layout_height="48dp"
-        android:text="@string/login"
+        android:text="@string/register"
         android:textAllCaps="false"
         android:layout_marginTop="20dp"
         android:textColor="@color/white"
