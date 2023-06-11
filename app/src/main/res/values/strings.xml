@@ -93,5 +93,5 @@
     <string name="job">Pekerjaan</string>
     <string name="gender">Jenis Kelamin</string>
     <string name="password_wrong">Email atau Password salah</string>
-    <string name="error_500">Terjadi kesalahan..</string>
+    <string name="error_500">Server Bermasalah, silahkan coba lagi ya!</string>
 </resources>

@@ -10,8 +10,8 @@ import com.team.temara.data.remote.response.Result
 import com.team.temara.data.remote.retrofit.ApiService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
-import okhttp3.Dispatcher
 import java.lang.Exception
 import kotlin.coroutines.CoroutineContext
 
@@ -54,11 +54,15 @@ class AuthRepository(
     }
 
     fun getToken(): LiveData<String> = authPreferences.getToken().asLiveData()
-    fun setUserToken(bearerToken: String) { launch(Dispatchers.IO) {
-        authPreferences.setUserToken(bearerToken)
+    fun getId(): Flow<String> = authPreferences.getId()
+    fun setUserToken(token: String) { launch(Dispatchers.IO) {
+        authPreferences.setUserToken(token)
     } }
-    fun deleteUserToken() { launch(Dispatchers.IO) {
-        authPreferences.deleteUserToken()
+    fun setUserId(userId: String) { launch(Dispatchers.IO) {
+        authPreferences.setUserId(userId)
+    }}
+    fun deleteUserData() { launch(Dispatchers.IO) {
+        authPreferences.deleteUserData()
     }}
 
     companion object {

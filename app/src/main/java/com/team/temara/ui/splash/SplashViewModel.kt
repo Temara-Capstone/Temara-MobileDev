@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.asLiveData
 import com.team.temara.data.remote.AppModule
 import com.team.temara.data.repository.AuthRepository
 
@@ -13,6 +14,10 @@ class SplashViewModel(
 
     fun checkToken(): LiveData<String> {
         return authRepository.getToken()
+    }
+
+    fun checkId(): LiveData<String> {
+        return authRepository.getId().asLiveData()
     }
 
     class SplashViewModelFactory private constructor(

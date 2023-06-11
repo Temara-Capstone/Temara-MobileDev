@@ -31,12 +31,13 @@ class LoginActivity : AppCompatActivity() {
 
     private fun setupView() {
         binding.btnLogin.setOnClickListener {
-            if(!binding.etEmail.text.isNullOrEmpty() && !binding.etPassword.text.isNullOrEmpty()) {
+            if (!binding.etEmail.text.isNullOrEmpty() && !binding.etPassword.text.isNullOrEmpty()) {
                 val email = binding.etEmail.text.toString()
                 val password = binding.etPassword.text.toString()
 
-                if(password.length <= 7) {
-                    Toast.makeText(this, getString(R.string.password_minimum), Toast.LENGTH_SHORT).show()
+                if (password.length <= 7) {
+                    Toast.makeText(this, getString(R.string.password_minimum), Toast.LENGTH_SHORT)
+                        .show()
                 } else {
                     loginViewModel.login(email, password).observe(this) {
                         when (it) {
@@ -45,9 +46,12 @@ class LoginActivity : AppCompatActivity() {
                                 binding.ProgressBar.visibility = View.GONE
                                 val intent = Intent(this, MainActivity::class.java)
                                 val result = it.result
-                                loginViewModel.setUserToken(result.data.bearerToken)
-                                intent.putExtra(name_extra, result.data.name )
-                                Log.d("LoginActivity", "token : ${result.data.bearerToken}")
+                                loginViewModel.setUserToken(result.data.token)
+                                loginViewModel.setUserId(result.data.userId)
+                                Log.d(
+                                    "LoginActivity",
+                                    "token : ${result.data.token} & userId: ${result.data.userId}"
+                                )
                                 startActivity(intent)
                                 finish()
                             }
@@ -57,11 +61,21 @@ class LoginActivity : AppCompatActivity() {
                                 val error = it.error
                                 when {
                                     error.contains("HTTP 400") -> {
-                                        Toast.makeText(this, getString(R.string.password_wrong), Toast.LENGTH_SHORT).show()
+                                        Toast.makeText(
+                                            this,
+                                            getString(R.string.password_wrong),
+                                            Toast.LENGTH_SHORT
+                                        ).show()
                                     }
+
                                     error.contains("HTTP 500") -> {
-                                        Toast.makeText(this, getString(R.string.error_500), Toast.LENGTH_SHORT).show()
+                                        Toast.makeText(
+                                            this,
+                                            getString(R.string.error_500),
+                                            Toast.LENGTH_SHORT
+                                        ).show()
                                     }
+
                                     else -> {
                                         Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
                                     }
@@ -76,7 +90,7 @@ class LoginActivity : AppCompatActivity() {
                 }
             } else {
                 binding.etEmail.error = resources.getString(R.string.email_empty)
-                if(binding.etPassword.text.isNullOrEmpty()) {
+                if (binding.etPassword.text.isNullOrEmpty()) {
                     binding.etPassword.error = getString(R.string.password_empty)
                 }
             }
@@ -87,10 +101,6 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-    }
-
-    companion object {
-        const val name_extra = "name"
     }
 
 }

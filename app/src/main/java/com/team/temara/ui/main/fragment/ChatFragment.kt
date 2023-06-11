@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.team.temara.databinding.ChatFragmentBinding
 import com.team.temara.ui.info.InfoUserActivity
+import com.team.temara.ui.login.LoginActivity
 
 class ChatFragment : Fragment() {
     private var _binding: ChatFragmentBinding? = null
@@ -24,6 +25,7 @@ class ChatFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         binding.apply {
             btnInformation.setOnClickListener {

@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.team.temara.databinding.HomeFragmentBinding
-import com.team.temara.ui.login.LoginActivity.Companion.name_extra
 import java.util.Calendar
 
 class HomeFragment : Fragment() {
@@ -27,10 +26,6 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.tvWelcome.text = getGreeting()
-
-        val name = activity?.intent?.getStringExtra(name_extra)
-        binding.tvName.text = name
-
     }
 
     fun getGreeting(): String {

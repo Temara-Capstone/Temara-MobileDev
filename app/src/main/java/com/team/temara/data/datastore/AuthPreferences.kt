@@ -10,16 +10,25 @@ import kotlinx.coroutines.flow.map
 class AuthPreferences (private val dataStore: DataStore<Preferences>) {
 
     private val tokenKey = stringPreferencesKey("token")
+    private val userIdKey = stringPreferencesKey("userId")
 
     fun getToken(): Flow<String> { return dataStore.data.map {
         it[tokenKey] ?: "null"
     } }
 
-    suspend fun setUserToken(bearerToken: String) { dataStore.edit {
-        it [this.tokenKey] = bearerToken
+    fun getId(): Flow<String> { return dataStore.data.map {
+        it[userIdKey] ?: "null"
     }}
 
-    suspend fun deleteUserToken() { dataStore.edit {
+    suspend fun setUserToken(token: String) { dataStore.edit {
+        it [this.tokenKey] = token
+    }}
+
+    suspend fun setUserId(userId: String) { dataStore.edit {
+        it [this.userIdKey] = userId
+    }}
+
+    suspend fun deleteUserData() { dataStore.edit {
         it.clear()
     }}
 

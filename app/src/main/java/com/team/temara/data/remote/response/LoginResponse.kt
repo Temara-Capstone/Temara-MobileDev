@@ -20,6 +20,9 @@ data class Data(
     @field:SerializedName("name")
     val name: String,
 
-    @field:SerializedName("bearerToken")
-    val bearerToken: String
+    @field:SerializedName("image")
+    val image: String,
+
+    @field:SerializedName("token")
+    val token: String
 )

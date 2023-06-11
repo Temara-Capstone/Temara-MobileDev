@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.team.temara.databinding.SplashActivityBinding
@@ -31,8 +32,16 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun checkSession() {
-        splashViewModel.checkToken().observe(this) {
-            if (it == "null") {
+        splashViewModel.checkToken().observe(this) { token ->
+
+            Log.d("SplashActivity", "token : $token")
+
+            splashViewModel.checkId().observe(this) { id ->
+                Log.d("SplashActivity", "Id : $id")
+            }
+
+
+            if (token == "null") {
                 val intent = Intent(this, WelcomeActivity::class.java)
                 startActivity(intent)
                 finish()
