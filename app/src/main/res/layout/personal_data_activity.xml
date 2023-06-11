@@ -13,11 +13,10 @@
 
     <Button
         android:id="@+id/btnBack"
-        android:layout_width="33dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginTop="18dp"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginStart="@dimen/_27sdp"
+        android:layout_marginTop="@dimen/_14sdp"
         android:background="@drawable/ic_arrow_left"
         android:backgroundTint="@color/black"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,19 +27,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/personal_data"
-        android:textSize="16sp"
+        android:textSize="@dimen/_13ssp"
         android:fontFamily="@font/epilogue_bold"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="@dimen/_20sdp"/>
 
     <ImageView
         android:id="@+id/ivUser"
-        android:layout_width="95dp"
-        android:layout_height="93dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="@dimen/_87sdp"
+        android:layout_marginTop="@dimen/_25sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvPersonalData"
@@ -48,150 +47,118 @@
 
 
     <TextView
-        android:id="@+id/tvNamaLengkap"
+        android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="12dp"
-        android:textSize="12sp"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textSize="@dimen/_10ssp"
         android:fontFamily="@font/epilogue_sembold"
-        android:text="@string/nama_lengkap"
+        android:text="@string/fullname"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.036"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivUser" />
 
-    <ImageView
-        android:id="@+id/rectagle1"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginEnd="36dp"
-        android:src="@drawable/rectagle2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/tvNamaLengkap" />
-
     <EditText
-        android:id="@+id/tvRecNamaLengkap"
-        android:layout_width="wrap_content"
+        android:id="@+id/etFullName"
+        android:layout_width="@dimen/_240sdp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/rectagle1"
-        android:fontFamily="@font/epilogue_sembold"
-        android:textSize="12sp"
-        android:text="@string/nama_lengkap"
-        android:textColor="@color/white"
-        app:layout_constraintTop_toTopOf="@+id/rectagle1"
-        app:layout_constraintTop_toBottomOf="@+id/tvNamaLengkap"
-        android:layout_marginTop="7dp"
-        android:layout_marginStart="20dp"/>
-
-
-
-    <ImageView
-        android:id="@+id/rectagle2"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginEnd="36dp"
-        android:src="@drawable/rectagle2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/tvPekerjaan" />
+        app:layout_constraintTop_toBottomOf="@id/tvName"
+        android:background="@drawable/rectagle2"
+        android:hint="@string/fullname"
+        android:textColorHint="@color/white"
+        android:fontFamily="@font/epilogue_medium"
+        android:textSize="@dimen/_9ssp"
+        android:paddingStart="@dimen/_18sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_1sdp"
+        android:inputType="text"/>
 
     <TextView
-        android:id="@+id/tvPekerjaan"
+        android:id="@+id/tvJob"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="10dp"
-        android:textSize="12sp"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textSize="@dimen/_10ssp"
         android:fontFamily="@font/epilogue_sembold"
-        android:text="@string/pekerjaan"
+        android:text="@string/job"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.036"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectagle1" />
+        app:layout_constraintTop_toBottomOf="@+id/etFullName" />
 
     <EditText
-        android:id="@+id/tvRecPekerjaan"
-        android:layout_width="wrap_content"
+        android:id="@+id/etJob"
+        android:layout_width="@dimen/_240sdp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/rectagle1"
-        android:fontFamily="@font/epilogue_sembold"
-        android:text="@string/pekerjaan"
-        android:textSize="12sp"
-        android:textColor="@color/white"
-        app:layout_constraintTop_toTopOf="@+id/rectagle2"
-        app:layout_constraintTop_toBottomOf="@+id/tvPekerjaan"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="20dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvJob"
+        android:background="@drawable/rectagle2"
+        android:hint="@string/job"
+        android:fontFamily="@font/epilogue_medium"
+        android:textSize="@dimen/_9ssp"
+        android:textColorHint="@color/white"
+        android:paddingStart="@dimen/_18sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_1sdp"
+        android:inputType="text"/>
 
     <TextView
-        android:id="@+id/tvJenisKelamin"
+        android:id="@+id/tvGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="10dp"
-        android:textSize="12sp"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textSize="@dimen/_10ssp"
         android:fontFamily="@font/epilogue_sembold"
-        android:text="@string/jenis_kelamin"
+        android:text="@string/data_gender"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.036"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectagle2" />
+        app:layout_constraintTop_toBottomOf="@+id/etJob"/>
 
     <RadioButton
         android:id="@+id/rbPria"
-        android:layout_width="110dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/rectagle2"
-        android:textSize="12sp"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginStart="@dimen/_43sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textSize="@dimen/_9ssp"
         android:text="@string/pria"
-        android:fontFamily="@font/epilogue_sembold"
         android:textColor="@color/white"
+        android:background="@drawable/rectagle2"
+        android:fontFamily="@font/epilogue_sembold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvJenisKelamin" />
+        app:layout_constraintTop_toBottomOf="@id/tvGender"/>
 
     <RadioButton
         android:id="@+id/rbWanita"
-        android:layout_width="110dp"
-        android:layout_height="50dp"
-        android:background="@drawable/rectagle2"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginStart="@dimen/_130sdp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:text="@string/wanita"
-        android:textColor="@color/white"
         android:fontFamily="@font/epilogue_sembold"
-        android:textSize="12sp"
+        android:textSize="@dimen/_9ssp"
+        android:textColor="@color/white"
+        android:background="@drawable/rectagle2"
         app:layout_constraintStart_toStartOf="@id/rbPria"
-        app:layout_constraintTop_toBottomOf="@id/tvJenisKelamin"
-        app:layout_constraintRight_toLeftOf="@id/rbPria"
-        android:layout_marginStart="190dp"
-        android:layout_marginTop="10dp"/>
-
-    <ImageView
-        android:id="@+id/rectagle3"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginEnd="36dp"
-        android:src="@drawable/rectagle2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
+        app:layout_constraintTop_toBottomOf="@id/tvGender"
+        app:layout_constraintRight_toLeftOf="@id/rbPria" />
 
     <TextView
         android:id="@+id/tvEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textSize="@dimen/_10ssp"
         android:fontFamily="@font/epilogue_sembold"
-        android:textSize="12sp"
         android:text="@string/email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.036"
@@ -199,73 +166,67 @@
         app:layout_constraintTop_toBottomOf="@+id/rbPria" />
 
     <EditText
-        android:id="@+id/tvRecEmail"
-        android:layout_width="wrap_content"
+        android:id="@+id/etEmail"
+        android:layout_width="@dimen/_240sdp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/rectagle3"
-        android:fontFamily="@font/epilogue_sembold"
-        android:textSize="12sp"
-        android:text="@string/email"
-        android:textColor="@color/white"
-        app:layout_constraintTop_toTopOf="@+id/rectagle3"
-        app:layout_constraintTop_toBottomOf="@+id/rbPria"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="20dp"/>
-
-    <ImageView
-        android:id="@+id/rectagle4"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginEnd="36dp"
-        android:src="@drawable/rectagle2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/tvNohp" />
+        app:layout_constraintTop_toBottomOf="@id/tvEmail"
+        android:background="@drawable/rectagle2"
+        android:hint="@string/email"
+        android:fontFamily="@font/epilogue_medium"
+        android:textSize="@dimen/_9ssp"
+        android:paddingStart="@dimen/_18sdp"
+        android:textColorHint="@color/white"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_1sdp"
+        android:inputType="textEmailAddress"/>
 
     <TextView
         android:id="@+id/tvNohp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="10dp"
-        android:textSize="12sp"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textSize="@dimen/_10ssp"
         android:fontFamily="@font/epilogue_sembold"
-        android:text="@string/nomor_handphone"
+        android:text="@string/no_hp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.036"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectagle3" />
+        app:layout_constraintTop_toBottomOf="@id/etEmail"/>
 
     <EditText
-        android:id="@+id/tvRecNohp"
-        android:layout_width="wrap_content"
+        android:id="@+id/etNohp"
+        android:layout_width="@dimen/_240sdp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/rectagle3"
-        android:fontFamily="@font/epilogue_sembold"
-        android:text="@string/no_hp"
-        android:textSize="12sp"
-        android:textColor="@color/white"
-        app:layout_constraintTop_toTopOf="@+id/rectagle4"
-        app:layout_constraintTop_toBottomOf="@+id/rbPria"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="20dp"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginEnd="36dp"
-        android:text="@string/simpan"
-        android:textSize="12sp"
-        android:fontFamily="@font/epilogue_sembold"
-        android:background="@drawable/rectagle2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="13dp"
+        app:layout_constraintTop_toBottomOf="@id/tvNohp"
+        android:background="@drawable/rectagle2"
+        android:hint="@string/no_hp"
+        android:fontFamily="@font/epilogue_medium"
+        android:textSize="@dimen/_9ssp"
+        android:textColorHint="@color/white"
+        android:paddingStart="@dimen/_18sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_1sdp"
+        android:inputType="text"/>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="@dimen/_240sdp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etNohp"
+        android:fontFamily="@font/epilogue_sembold"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:textSize="@dimen/_11ssp"
+        android:text="@string/save"
+        android:background="@drawable/rectagle2"
         android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/rectagle4" />
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

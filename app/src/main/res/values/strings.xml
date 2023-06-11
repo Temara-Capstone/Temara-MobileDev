@@ -65,18 +65,9 @@
     <string name="informasi_pengguna">Informasi Pengguna</string>
     <string name="information">Temara adalah layanan Konsultasi dan Dukungan bagi pengguna yang mengalami masalah kesehatan mental. Temara berkomitmen untuk menjaga dan melindungi privasi data pengguna sebaik mungkin. Pengguna diharapkan untuk tidak menyebarkan identitas mereka kepada pengguna yang tidak dikenal. Gunakan layanan yang disediakan oleh Temara sebagai tempat untuk berbagi cerita dan saling mendukung. Temara berharap dapat menjadi wadah yang membantu teman-teman yang mengalami masalah kesehatan mental.</string>
     <string name="user_info">Informasi Pengguna</string>
-    <string name="personal_data">Personal Data</string>
-    <string name="nama_lengkap">Nama Lengkap</string>
-    <string name="pekerjaan">Pekerjaan</string>
-    <string name="jenis_kelamin">Jenis Kelamin</string>
-    <string name="pria">Pria</string>
-    <string name="wanita">Wanita</string>
-    <string name="nomor_handphone">Nomor Handphone</string>
-    <string name="simpan">Simpan</string>
-    <string name="ubah_kata_sandi">Ubah Kata Sandi</string>
-    <string name="masukkan_kata_sandi_baru">Masukkan Kata Sandi Baru</string>
-    <string name="string_password">********</string>
-    <string name="konfirmasi_kata_sandi">Konfirmasi Kata Sandi</string>
+    <string name="change_password">Ubah Kata Sandi</string>
+    <string name="new_password">Masukkan Kata Sandi Baru</string>
+    <string name="confirm_password_sandi">Konfirmasi Kata Sandi</string>
     <string name="desc_peduli">Kami ingin menyampaikan rasa empati dan simpati kami terhadap apa yang sedang Anda alami saat ini. Kami mengerti bahwa ini adalah masa yang sulit dan kami ingin Anda tahu bahwa kami ada di sini untuk mendukung Anda. Temara akan selalu ada untuk menemani Anda kapanpun Anda membutuhkannya.\n\nJika kami tidak dapat memberikan bantuan yang cukup untuk mengatasi kondisi Anda, kami ingin mendorong Anda untuk mencari bantuan dari Pelayanan Masyarakat atau meminta bantuan dari teman-teman Anda. Ingatlah bahwa Anda tidak sendirian dalam perjuangan ini. Kami sangat peduli dengan Anda dan ingin memastikan bahwa Anda tidak merasa kesepian.</string>
     <string name="kami_peduli_denganmu">Kami Peduli Denganmu!</string>
     <string name="user_class">Pengguna Gratis</string>
@@ -94,4 +85,11 @@
     <string name="end">Akhiri</string>
     <string name="kamu_siapa">Kamu Siapa?</string>
     <string name="register_success">Your Account was Successfully created</string>
+    <string name="personal_data">Personal Data</string>
+    <string name="fullname">Nama Lengkap</string>
+    <string name="pria">Pria</string>
+    <string name="wanita">Wanita</string>
+    <string name="save">Simpan</string>
+    <string name="job">Pekerjaan</string>
+    <string name="gender">Jenis Kelamin</string>
 </resources>

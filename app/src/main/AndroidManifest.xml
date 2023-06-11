@@ -33,13 +33,16 @@
         <activity android:name=".ui.main.MainActivity"
             android:exported="false"/>
 
-        <activity android:name=".ui.profile.password.PasswordActivity"
-            android:exported="false"/>
-
         <activity android:name=".ui.login.LoginActivity"
             android:exported="false"/>
 
         <activity android:name=".ui.info.InfoUserActivity"
+            android:exported="false"/>
+
+        <activity android:name=".ui.profil.password.PasswordActivity"
+            android:exported="false"/>
+
+        <activity android:name=".ui.profil.personaldata.PersonalDataActivity"
             android:exported="false"/>
 
     </application>
