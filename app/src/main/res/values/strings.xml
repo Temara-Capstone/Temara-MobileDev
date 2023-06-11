@@ -85,6 +85,7 @@
     <string name="end">Akhiri</string>
     <string name="kamu_siapa">Kamu Siapa?</string>
     <string name="register_success">Your Account was Successfully created</string>
+<<<<<<< HEAD
     <string name="personal_data">Personal Data</string>
     <string name="fullname">Nama Lengkap</string>
     <string name="pria">Pria</string>
@@ -92,4 +93,8 @@
     <string name="save">Simpan</string>
     <string name="job">Pekerjaan</string>
     <string name="gender">Jenis Kelamin</string>
+=======
+    <string name="password_wrong">Email atau Password salah</string>
+    <string name="error_500">Terjadi kesalahan..</string>
+>>>>>>> 9e881a4b85d8126bfe33c3da1cfa261376f4ac8f
 </resources>

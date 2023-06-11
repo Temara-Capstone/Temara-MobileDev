@@ -17,6 +17,9 @@ data class Data(
     @field:SerializedName("userId")
     val userId: String,
 
+    @field:SerializedName("name")
+    val name: String,
+
     @field:SerializedName("bearerToken")
     val bearerToken: String
 )
