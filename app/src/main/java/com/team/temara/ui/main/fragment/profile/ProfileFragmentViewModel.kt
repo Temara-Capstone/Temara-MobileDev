@@ -1,11 +1,14 @@
 package com.team.temara.ui.main.fragment.profile
 
 import android.content.Context
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.asLiveData
 import com.team.temara.data.remote.AppModule
+import com.team.temara.data.remote.response.Result
+import com.team.temara.data.remote.response.resultData
 import com.team.temara.data.repository.AuthRepository
-import com.team.temara.ui.login.LoginViewModel
 
 class ProfileFragmentViewModel(
     private val authRepository: AuthRepository
@@ -14,6 +17,16 @@ class ProfileFragmentViewModel(
     fun logout() {
         authRepository.deleteUserData()
     }
+
+    fun checkToken(): LiveData<String> {
+        return authRepository.getToken()
+    }
+
+    fun checkId(): LiveData<String> {
+        return authRepository.getId().asLiveData()
+    }
+
+    fun getUser(token: String, userId: String): LiveData<Result<resultData>> = authRepository.getUser(token, userId)
 
     class ProfileViewModelFactory private constructor(
         private val authRepository: AuthRepository

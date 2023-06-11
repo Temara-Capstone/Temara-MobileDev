@@ -1,4 +1,4 @@
-package com.team.temara.ui.main.fragment
+package com.team.temara.ui.main.fragment.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

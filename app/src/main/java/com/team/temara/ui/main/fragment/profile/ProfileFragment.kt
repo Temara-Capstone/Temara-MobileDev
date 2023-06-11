@@ -2,13 +2,18 @@ package com.team.temara.ui.main.fragment.profile
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.bumptech.glide.Glide
+import com.team.temara.data.remote.response.Result
+import com.team.temara.data.remote.response.resultData
 import com.team.temara.databinding.ProfileFragmentBinding
-import com.team.temara.ui.info.InfoUserActivity
+import com.team.temara.ui.main.MainActivity
 import com.team.temara.ui.profil.panicbutton.PanicButtonActivity
 import com.team.temara.ui.profil.password.PasswordActivity
 import com.team.temara.ui.profil.personaldata.PersonalDataActivity
@@ -39,13 +44,41 @@ class ProfileFragment : Fragment() {
         binding.btnSos.setOnClickListener {
             startActivity(Intent(context, PanicButtonActivity::class.java))
         }
-        binding.tvUbahSandi.setOnClickListener{
+        binding.tvUbahSandi.setOnClickListener {
             startActivity(Intent(context, PasswordActivity::class.java))
         }
         binding.btnLogout.setOnClickListener {
             profileFragmentViewModel.logout()
         }
 
-    }
 
+        profileFragmentViewModel.checkToken().observe(viewLifecycleOwner) { token ->
+            if (token != "null") {
+                val myToken = "Bearer $token"
+                profileFragmentViewModel.checkId().observe(viewLifecycleOwner) { userId ->
+                    val myId = userId ?: ""
+                    profileFragmentViewModel.getUser(myToken, myId).observe(viewLifecycleOwner) {
+                        when (it) {
+                            is Result.Loading -> {
+                                binding.progreesBar.visibility = View.VISIBLE
+                            }
+                            is Result.Error -> {
+                                binding.progreesBar.visibility = View.GONE
+                            }
+                            is Result.Success -> {
+                                binding.progreesBar.visibility = View.GONE
+                                val result = it.result
+                                binding.tvName.text = result.name
+
+                                Glide.with(requireContext())
+                                    .load(result.image)
+                                    .into(binding.ivUser)
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
 }

@@ -7,12 +7,12 @@ import com.team.temara.data.datastore.AuthPreferences
 import com.team.temara.data.remote.response.LoginResponse
 import com.team.temara.data.remote.response.RegisterResponse
 import com.team.temara.data.remote.response.Result
+import com.team.temara.data.remote.response.resultData
 import com.team.temara.data.remote.retrofit.ApiService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
-import java.lang.Exception
 import kotlin.coroutines.CoroutineContext
 
 
@@ -49,6 +49,21 @@ class AuthRepository(
                 emit(Result.Success(response))
             }
         } catch (e: Exception) {
+            emit(Result.Error(e.message.toString()))
+        }
+    }
+
+    fun getUser(token: String, userId: String): LiveData<Result<resultData>> = liveData {
+        emit(Result.Loading)
+        try {
+            val response = apiService.getUser(token, userId)
+            if (response.error) {
+                emit(Result.Error(response.message))
+            } else {
+                val user = response.result
+                emit(Result.Success(user))
+            }
+        } catch(e: Exception) {
             emit(Result.Error(e.message.toString()))
         }
     }
