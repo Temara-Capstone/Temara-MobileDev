@@ -50,7 +50,27 @@ class RegisterActivity : AppCompatActivity() {
                             is Result.Error -> {
                                 binding.ProgressBar.visibility = View.GONE
                                 val error = it.error
-                                Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
+                                when {
+                                    error.contains("HTTP 401") -> {
+                                        Toast.makeText(
+                                            this,
+                                            getString(R.string.error_401),
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                    }
+
+                                    error.contains("HTTP 500") -> {
+                                        Toast.makeText(
+                                            this,
+                                            getString(R.string.error_500),
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                    }
+
+                                    else -> {
+                                        Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
+                                    }
+                                }
                             }
 
                             is Result.Loading -> {
