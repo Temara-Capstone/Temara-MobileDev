@@ -231,20 +231,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etNohp"/>
 
-    <DatePicker
-        android:id="@+id/dpBorn"
+    <EditText
+        android:id="@+id/etBorn"
         android:layout_width="@dimen/_240sdp"
-        android:layout_height="@dimen/_110sdp"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="@dimen/_5sdp"
-        android:layout_marginEnd="45dp"
-        android:background="@drawable/rectagle2"
-        android:calendarTextColor="@color/white"
-        android:calendarViewShown="false"
-        android:datePickerMode="spinner"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvBorn" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBorn"
+        android:background="@drawable/rectagle2"
+        android:hint="@string/born"
+        android:fontFamily="@font/epilogue_medium"
+        android:textSize="@dimen/_9ssp"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:paddingStart="@dimen/_18sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_1sdp"
+        android:inputType="text"/>/>
 
     <Button
         android:id="@+id/btnSave"
@@ -252,7 +255,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dpBorn"
+        app:layout_constraintTop_toBottomOf="@id/etBorn"
         android:fontFamily="@font/epilogue_sembold"
         android:layout_marginTop="@dimen/_15sdp"
         android:textSize="@dimen/_11ssp"
