@@ -41,7 +41,7 @@
         app:layout_constraintBottom_toBottomOf="@id/ivUser"/>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/rvEndChat"
+        android:id="@+id/btnEnd"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:cardCornerRadius="4dp"
@@ -51,24 +51,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/ivUser"
         >
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/tvRecom"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="@string/end"
-                android:textColor="@color/white"
-                android:fontFamily="@font/epilogue_sembold"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 

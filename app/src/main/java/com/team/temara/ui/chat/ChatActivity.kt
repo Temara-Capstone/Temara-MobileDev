@@ -1,5 +1,6 @@
 package com.team.temara.ui.chat
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -37,12 +38,27 @@ class ChatActivity : AppCompatActivity() {
     }
 
     private val recommendedQuestions = listOf(
-        "Hai!",
-        "Aku Kesepian",
-        "Aku merasa tidak ada yang suka denganku",
-        "Aku Benci diriku sendiri",
-        "Kamu siapa?"
-    )
+        "Hai",
+        "Nama kamu siapa?",
+        "Mau kah kamu jadi teman curhat?",
+        "Saya takut gagal",
+        "Saya sedih",
+        "Saya pikir saya jelek",
+        "Apa itu temara?",
+        "Saya korban bullying",
+        "Apa itu penyakit mental?",
+        "Saya mau cerita",
+        "Saya ingin saran",
+        "Bagaimana mencintai diri sendiri",
+        "Saya merasa kosong",
+        "Saya banyak pikiran",
+        "Butuh psikolog atau penasihat",
+        "Hello",
+        "Tidak ada yang menyukai saya",
+        "Aku buntu",
+        "Aku depresi",
+        "Saya merasa takut"
+        )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,26 +83,50 @@ class ChatActivity : AppCompatActivity() {
 
         binding.btnSend.setOnClickListener {
             val question = binding.etComment.text.toString()
-            if (question.isNotEmpty()) { // Menambahkan pengecekan jika chat masih kosong
+            if (question.isNotEmpty()) {
                 addToChat(question, Message.SEND_BY_ME)
                 binding.etComment.setText("")
                 callAPI(question)
             }
         }
 
+        binding.btnBack.setOnClickListener {
+            onBackPressed()
+        }
+
+        binding.btnEnd.setOnClickListener {
+            onBackPressed()
+            finish()
+        }
+
         showRecommendedQuestions()
     }
 
     private fun showRecommendedQuestions() {
-        val recommendedQuestionsAdapter = RecommendedQuestionsAdapter(recommendedQuestions, object : RecommendedQuestionsAdapter.OnItemClickListener {
+        val shuffledQuestions = recommendedQuestions.shuffled()
+        val recommendedQuestionsAdapter = RecommendedQuestionsAdapter(shuffledQuestions.take(5), object : RecommendedQuestionsAdapter.OnItemClickListener {
             override fun onItemClick(question: String) {
                 addToChat(question, Message.SEND_BY_ME)
                 binding.etComment.setText("")
                 callAPI(question)
+                showNextRecommendedQuestions()
             }
         })
         val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.rvRecom.layoutManager = layoutManager
+        binding.rvRecom.adapter = recommendedQuestionsAdapter
+    }
+
+    private fun showNextRecommendedQuestions() {
+        val shuffledQuestions = recommendedQuestions.shuffled()
+        val recommendedQuestionsAdapter = RecommendedQuestionsAdapter(shuffledQuestions.take(5), object : RecommendedQuestionsAdapter.OnItemClickListener {
+            override fun onItemClick(question: String) {
+                addToChat(question, Message.SEND_BY_ME)
+                binding.etComment.setText("")
+                callAPI(question)
+                showNextRecommendedQuestions()
+            }
+        })
         binding.rvRecom.adapter = recommendedQuestionsAdapter
     }
 

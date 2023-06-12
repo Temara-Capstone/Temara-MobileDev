@@ -97,5 +97,8 @@
     <string name="error_401">Unauthorized, otoriasi gagal! silahkan coba lagi</string>
     <string name="register">Daftar</string>
     <string name="write">Sedang mengetik....</string>
-    <string name="ara">Ara - Teman Bicaramu</string>
+    <string name="ara">Ara</string>
+
+<!--    Chat Bot Recommended String-->
+
 </resources>
