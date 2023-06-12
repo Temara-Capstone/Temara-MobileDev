@@ -1,5 +1,6 @@
-package com.team.temara.ui.main.fragment.home
+package com.team.temara.ui.main.fragment.chat
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,20 +9,21 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.team.temara.data.remote.response.Result
-import com.team.temara.databinding.HomeFragmentBinding
-import com.team.temara.ui.main.fragment.profile.ProfileFragmentViewModel
-import java.util.Calendar
+import com.team.temara.databinding.ChatFragmentBinding
+import com.team.temara.ui.chat.ChatActivity
+import com.team.temara.ui.info.InfoUserActivity
 
-class HomeFragment : Fragment() {
-
-    private var _binding: HomeFragmentBinding? = null
+class ChatFragment : Fragment() {
+    private var _binding: ChatFragmentBinding? = null
     private val binding get() = _binding!!
 
-    private val homeViewModel: HomeViewModel by viewModels {
-        HomeViewModel.HomeViewModelFactory.getInstance(requireContext())
-    }
-
     private var isDataLoaded = false
+
+
+
+    private val chatFragmentViewModel: ChatFragmentViewModel by viewModels {
+        ChatFragmentViewModel.ChatFragmentViewModelFactory.getInstance(requireContext())
+    }
 
 
     override fun onCreateView(
@@ -29,22 +31,31 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = HomeFragmentBinding.inflate(inflater, container, false)
+        _binding = ChatFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.tvWelcome.text = getGreeting()
+
+        binding.apply {
+            btnInformation.setOnClickListener {
+                startActivity(Intent(context, InfoUserActivity::class.java))
+            }
+            cvBot.setOnClickListener {
+                startActivity(Intent(context, ChatActivity::class.java))
+            }
+        }
+
 
         if(!isDataLoaded) {
-            homeViewModel.checkToken().observe(viewLifecycleOwner) { token ->
-                if (token != "null") {
-                    val myToken = "Bearer $token"
-                    homeViewModel.checkId().observe(viewLifecycleOwner) { userId ->
-                        val myId = userId ?: ""
-                        homeViewModel.getUser(myToken, myId).observe(viewLifecycleOwner) {
+        chatFragmentViewModel.checkToken().observe(viewLifecycleOwner) { token ->
+            if (token != "null") {
+                val myToken = "Bearer $token"
+                chatFragmentViewModel.checkId().observe(viewLifecycleOwner) { userId ->
+                    val myId = userId ?: ""
+                    chatFragmentViewModel.getUser(myToken, myId).observe(viewLifecycleOwner) {
                             when (it) {
                                 is Result.Loading -> {
                                 }
@@ -65,18 +76,6 @@ class HomeFragment : Fragment() {
         }
     }
 
-    fun getGreeting(): String {
-
-        val cal = Calendar.getInstance()
-
-        return when (cal.get(Calendar.HOUR_OF_DAY)) {
-            in 0..11 -> "Selamat Pagi,"
-            in 12..14 -> "Selamat Siang,"
-            in 15..18 -> "Selamat Sore,"
-            else -> "Selamat Malam, "
-        }
-    }
-
     override fun onResume() {
         super.onResume()
         isDataLoaded = false
@@ -86,4 +85,6 @@ class HomeFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+
 }

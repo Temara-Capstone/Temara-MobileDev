@@ -26,6 +26,8 @@ class ProfileFragment : Fragment() {
         ProfileFragmentViewModel.ProfileViewModelFactory.getInstance(requireContext())
     }
 
+    private var isDataLoaded = false
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -51,34 +53,48 @@ class ProfileFragment : Fragment() {
             profileFragmentViewModel.logout()
         }
 
+        if (!isDataLoaded) { // Check if data is not loaded yet
+            profileFragmentViewModel.checkToken().observe(viewLifecycleOwner) { token ->
+                if (token != "null") {
+                    val myToken = "Bearer $token"
+                    profileFragmentViewModel.checkId().observe(viewLifecycleOwner) { userId ->
+                        val myId = userId ?: ""
+                        profileFragmentViewModel.getUser(myToken, myId).observe(viewLifecycleOwner) {
+                            when (it) {
+                                is Result.Loading -> {
+                                    binding.progreesBar.visibility = View.VISIBLE
+                                }
+                                is Result.Error -> {
+                                    binding.progreesBar.visibility = View.GONE
+                                }
+                                is Result.Success -> {
+                                    binding.progreesBar.visibility = View.GONE
+                                    val result = it.result
+                                    binding.tvName.text = result.name
 
-        profileFragmentViewModel.checkToken().observe(viewLifecycleOwner) { token ->
-            if (token != "null") {
-                val myToken = "Bearer $token"
-                profileFragmentViewModel.checkId().observe(viewLifecycleOwner) { userId ->
-                    val myId = userId ?: ""
-                    profileFragmentViewModel.getUser(myToken, myId).observe(viewLifecycleOwner) {
-                        when (it) {
-                            is Result.Loading -> {
-                                binding.progreesBar.visibility = View.VISIBLE
+                                    Glide.with(requireContext())
+                                        .load(result.image)
+                                        .into(binding.ivUser)
+                                }
                             }
-                            is Result.Error -> {
-                                binding.progreesBar.visibility = View.GONE
-                            }
-                            is Result.Success -> {
-                                binding.progreesBar.visibility = View.GONE
-                                val result = it.result
-                                binding.tvName.text = result.name
 
-                                Glide.with(requireContext())
-                                    .load(result.image)
-                                    .into(binding.ivUser)
-                            }
                         }
-
                     }
                 }
+                isDataLoaded = true
             }
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+        isDataLoaded = false
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+
 }

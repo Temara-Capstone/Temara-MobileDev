@@ -31,7 +31,7 @@
     <string name="profile">Profil</string>
     <string name="contenDesc_home">Background Home Fragment</string>
     <string name="selamat_sore">Selamat Sore,</string>
-    <string name="name_user">Reihan!</string>
+    <string name="name_user">null</string>
     <string name="desc_home">Gimana perasaan kamu hari ini?</string>
     <string name="senang">Senang</string>
     <string name="sedih">Sedih</string>
@@ -96,4 +96,6 @@
     <string name="error_500">Server Bermasalah, silahkan coba lagi ya!</string>
     <string name="error_401">Unauthorized, otoriasi gagal! silahkan coba lagi</string>
     <string name="register">Daftar</string>
+    <string name="write">Sedang mengetik....</string>
+    <string name="ara">Ara - Teman Bicaramu</string>
 </resources>
