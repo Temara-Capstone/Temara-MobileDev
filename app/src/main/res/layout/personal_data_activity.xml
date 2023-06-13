@@ -124,34 +124,48 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etJob"/>
 
-    <RadioButton
-        android:id="@+id/rbPria"
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_40sdp"
-        android:layout_marginStart="@dimen/_42sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:textSize="@dimen/_9ssp"
-        android:text="@string/pria"
-        android:textColor="@color/white"
-        android:background="@drawable/rectagle2"
-        android:fontFamily="@font/epilogue_sembold"
+    <RadioGroup
+        android:id="@+id/rgGender"
+        android:layout_width="@dimen/_240sdp"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvGender"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvGender">
 
-    <RadioButton
-        android:id="@+id/rbWanita"
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_40sdp"
-        android:layout_marginStart="@dimen/_130sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:text="@string/wanita"
-        android:fontFamily="@font/epilogue_sembold"
-        android:textSize="@dimen/_9ssp"
-        android:textColor="@color/white"
-        android:background="@drawable/rectagle2"
-        app:layout_constraintStart_toStartOf="@id/rbPria"
-        app:layout_constraintTop_toBottomOf="@id/tvGender"
-        app:layout_constraintRight_toLeftOf="@id/rbPria" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbPria"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_9ssp"
+                android:text="@string/pria"
+                android:textColor="@color/white"
+                android:background="@drawable/rectagle2"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:fontFamily="@font/epilogue_sembold" />
+
+            <RadioButton
+                android:id="@+id/rbWanita"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/rectagle2"
+                android:fontFamily="@font/epilogue_sembold"
+                android:text="@string/wanita"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_9ssp" />
+
+        </LinearLayout>
+
+    </RadioGroup>
+
+
 
     <TextView
         android:id="@+id/tvEmail"
@@ -165,7 +179,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.036"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rbPria" />
+        app:layout_constraintTop_toBottomOf="@+id/rgGender" />
 
     <EditText
         android:id="@+id/etEmail"
