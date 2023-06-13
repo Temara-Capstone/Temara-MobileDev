@@ -99,4 +99,6 @@
     <string name="write">Sedang mengetik....</string>
     <string name="ara">Ara - Teman Bicaramu</string>
     <string name="born">Tanggal Lahir</string>
+    <string name="createdat">CreatedAt</string>
+    <string name="updatedat">UpdatedAt</string>
 </resources>

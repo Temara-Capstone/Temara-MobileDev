@@ -30,6 +30,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         tools:src="@tools:sample/avatars"
+        android:scaleType="centerCrop"
         android:layout_marginEnd="27dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/ivLogo"/>

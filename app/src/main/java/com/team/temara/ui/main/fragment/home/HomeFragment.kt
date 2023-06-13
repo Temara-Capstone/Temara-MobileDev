@@ -55,6 +55,10 @@ class HomeFragment : Fragment() {
                                 is Result.Success -> {
                                     val result = it.result
                                     binding.tvName.text = result.name
+
+                                    Glide.with(requireContext())
+                                        .load(result.image)
+                                        .into(binding.profileImage)
                                 }
                             }
                         }

@@ -11,7 +11,7 @@
         tools:layout="@layout/home_fragment" />
     <fragment
         android:id="@+id/nav_article"
-        android:name="com.team.temara.ui.main.fragment.ArticleFragment"
+        android:name="com.team.temara.ui.main.fragment.article.ArticleFragment"
         android:label="Article"
         tools:layout="@layout/article_fragment"/>
     <fragment

@@ -2,8 +2,11 @@ package com.team.temara.ui.chat
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.View
+import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,7 +15,9 @@ import com.bumptech.glide.Glide
 import com.team.temara.R
 import com.team.temara.adapter.ChatAdapter
 import com.team.temara.adapter.RecommendedQuestionsAdapter
+import com.team.temara.data.remote.response.Result
 import com.team.temara.databinding.ChatActivityBinding
+import com.team.temara.ui.profil.personaldata.PersonalDataViewModel
 import com.team.temara.utils.Message
 import okhttp3.Call
 import okhttp3.Callback
@@ -31,10 +36,17 @@ class ChatActivity : AppCompatActivity() {
     private val messageList: MutableList<Message> = ArrayList()
     private lateinit var chatAdapter: ChatAdapter
 
+    private var clickCount = 0
+    private var isRecommendationClickable = true
+
     private val client = OkHttpClient()
 
     private val binding: ChatActivityBinding by lazy {
         ChatActivityBinding.inflate(layoutInflater)
+    }
+
+    private val chatViewModel: ChatViewModel by viewModels {
+        ChatViewModel.ChatViewModelFactory.getInstance(this)
     }
 
     private val recommendedQuestions = listOf(
@@ -69,6 +81,32 @@ class ChatActivity : AppCompatActivity() {
         binding.apply {
             binding.tvName.text = getString(R.string.ara)
             ivUser.setImageResource(R.drawable.ara)
+        }
+
+        chatViewModel.checkToken().observe(this) { token ->
+            if (token != "null") {
+                val myToken = "Bearer $token"
+                chatViewModel.checkId().observe(this) { userId ->
+                    val myId = userId ?: ""
+                    chatViewModel.getUser(myToken, myId).observe(this) {
+                        when (it) {
+                            is Result.Loading -> {
+                            }
+
+                            is Result.Error -> {
+                            }
+
+                            is Result.Success -> {
+                                val result = it.result
+
+                                Glide.with(this)
+                                    .load(result.image)
+                                    .into(binding.ivUser)
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -118,9 +156,28 @@ class ChatActivity : AppCompatActivity() {
     }
 
     private fun showNextRecommendedQuestions() {
+        if (!isRecommendationClickable) {
+            return
+        }
+
+        clickCount++
+        if (clickCount >= 10) {
+            isRecommendationClickable = false
+            showAlertDialog()
+            Handler().postDelayed({
+                isRecommendationClickable = true
+                clickCount = 0
+            }, 60000)
+            return
+        }
+
         val shuffledQuestions = recommendedQuestions.shuffled()
         val recommendedQuestionsAdapter = RecommendedQuestionsAdapter(shuffledQuestions.take(5), object : RecommendedQuestionsAdapter.OnItemClickListener {
             override fun onItemClick(question: String) {
+                if (!isRecommendationClickable) {
+                    return
+                }
+
                 addToChat(question, Message.SEND_BY_ME)
                 binding.etComment.setText("")
                 callAPI(question)
@@ -128,6 +185,17 @@ class ChatActivity : AppCompatActivity() {
             }
         })
         binding.rvRecom.adapter = recommendedQuestionsAdapter
+    }
+
+    private fun showAlertDialog() {
+        val alertDialog = AlertDialog.Builder(this)
+            .setTitle("Alert")
+            .setMessage("Anda telah mengklik rekomendasi chat secara berlebihan.")
+            .setPositiveButton("OK") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .create()
+        alertDialog.show()
     }
 
     private fun addToChat(message: String, sendBy: String) {

@@ -9,7 +9,7 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <Button
         android:id="@+id/btnBack"
@@ -40,11 +40,20 @@
         android:layout_width="@dimen/_90sdp"
         android:layout_height="@dimen/_87sdp"
         android:layout_marginTop="@dimen/_25sdp"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvPersonalData"
         tools:src="@tools:sample/avatars"/>
 
+    <ImageView
+        android:id="@+id/btnGallery"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/ic_gallery"
+        app:layout_constraintEnd_toEndOf="@id/ivUser"
+        app:layout_constraintStart_toEndOf="@id/ivUser"
+        app:layout_constraintBottom_toBottomOf="@id/ivUser"/>
 
     <TextView
         android:id="@+id/tvName"
@@ -78,37 +87,6 @@
         android:layout_marginStart="@dimen/_1sdp"
         android:inputType="text"/>
 
-    <TextView
-        android:id="@+id/tvJob"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_30sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:textSize="@dimen/_10ssp"
-        android:fontFamily="@font/epilogue_sembold"
-        android:text="@string/job"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.036"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etFullName" />
-
-    <EditText
-        android:id="@+id/etJob"
-        android:layout_width="@dimen/_240sdp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvJob"
-        android:background="@drawable/rectagle2"
-        android:hint="@string/job"
-        android:fontFamily="@font/epilogue_medium"
-        android:textSize="@dimen/_9ssp"
-        android:textColorHint="@color/white"
-        android:textColor="@color/white"
-        android:paddingStart="@dimen/_18sdp"
-        android:layout_marginTop="@dimen/_5sdp"
-        android:layout_marginStart="@dimen/_1sdp"
-        android:inputType="text"/>
 
     <TextView
         android:id="@+id/tvGender"
@@ -122,46 +100,31 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.036"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etJob"/>
+        app:layout_constraintTop_toBottomOf="@+id/etFullName"/>
 
     <RadioGroup
         android:id="@+id/rgGender"
         android:layout_width="@dimen/_240sdp"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvGender">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+
+        <RadioButton
+            android:id="@+id/rbPria"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:text="Pria" />
 
-            <RadioButton
-                android:id="@+id/rbPria"
-                android:layout_width="@dimen/_100sdp"
-                android:layout_height="@dimen/_40sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:textSize="@dimen/_9ssp"
-                android:text="@string/pria"
-                android:textColor="@color/white"
-                android:background="@drawable/rectagle2"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:fontFamily="@font/epilogue_sembold" />
-
-            <RadioButton
-                android:id="@+id/rbWanita"
-                android:layout_width="@dimen/_100sdp"
-                android:layout_height="@dimen/_40sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:background="@drawable/rectagle2"
-                android:fontFamily="@font/epilogue_sembold"
-                android:text="@string/wanita"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_9ssp" />
-
-        </LinearLayout>
+        <RadioButton
+            android:id="@+id/rbWanita"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Wanita" />
 
     </RadioGroup>
 
@@ -245,8 +208,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etNohp"/>
 
-    <EditText
-        android:id="@+id/etBorn"
+    <Button
+        android:id="@+id/btnBorn"
         android:layout_width="@dimen/_240sdp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -258,10 +221,9 @@
         android:textSize="@dimen/_9ssp"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
-        android:paddingStart="@dimen/_18sdp"
         android:layout_marginTop="@dimen/_5sdp"
         android:layout_marginStart="@dimen/_1sdp"
-        android:inputType="text"/>/>
+        android:inputType="text"/>
 
     <Button
         android:id="@+id/btnSave"
@@ -269,13 +231,25 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etBorn"
+        app:layout_constraintTop_toBottomOf="@id/btnBorn"
         android:fontFamily="@font/epilogue_sembold"
         android:layout_marginTop="@dimen/_15sdp"
         android:textSize="@dimen/_11ssp"
         android:text="@string/save"
         android:background="@drawable/rectagle2"
         android:textColor="@color/white"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+
         />
 
 
