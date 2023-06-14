@@ -3,6 +3,7 @@ package com.team.temara.data.remote.retrofit
 import com.team.temara.data.remote.response.ArticleResponse
 import com.team.temara.data.remote.response.LoginResponse
 import com.team.temara.data.remote.response.RegisterResponse
+import com.team.temara.data.remote.response.UpdatePasswordResponse
 import com.team.temara.data.remote.response.UpdateUserResponse
 import com.team.temara.data.remote.response.UserResponse
 import okhttp3.MultipartBody
@@ -49,6 +50,13 @@ interface ApiService {
         @Field("gender") gender: String,
         @Field("no_hp") no_hp: String
     ): UpdateUserResponse
+
+    @FormUrlEncoded
+    @POST("profile/update")
+    suspend fun updatePassword(
+        @Field("id") userId: String,
+        @Field("password") password: String
+    ): UpdatePasswordResponse
 
     @GET("articles")
     suspend fun getArticle(
