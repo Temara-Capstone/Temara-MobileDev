@@ -55,6 +55,9 @@
         <activity android:name=".ui.chat.ChatActivity"
             android:exported="false"/>
 
+        <activity android:name=".ui.article.ArticleDetailActivity"
+            android:exported="false"/>
+
     </application>
 
 

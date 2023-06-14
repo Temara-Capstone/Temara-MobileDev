@@ -1,10 +1,7 @@
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.app.ActivityOptionsCompat
-import androidx.core.util.Pair
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.team.temara.data.remote.response.ArticleList
@@ -35,20 +32,10 @@ class ArticleAdapter(private val context: Context) : RecyclerView.Adapter<Articl
             .into(holder.binding.ivContent)
 
         holder.binding.cvListArticle.setOnClickListener {
-            val intent = Intent(holder.itemView.context, ArticleDetailActivity::class.java)
-            intent.putExtra(ArticleDetailActivity.TITLE, article.title)
-            intent.putExtra(ArticleDetailActivity.DESC, article.text)
-            intent.putExtra(ArticleDetailActivity.CREATED_AT, article.createdAt)
-            intent.putExtra(ArticleDetailActivity.IMAGE, article.image)
-            intent.putExtra(ArticleDetailActivity.UPDATED_AT, article.updatedAt)
-
-            val optionsCompat: ActivityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(
-                context as Activity,
-                Pair(holder.binding.tvTitleArticle, "title"),
-                Pair(holder.binding.ivContent, "image"),
-                Pair(holder.binding.tvDescArticle, "text"),
-            )
-            holder.itemView.context.startActivity(intent, optionsCompat.toBundle())
+            val intent = Intent(holder.itemView.context, ArticleDetailActivity::class.java).apply {
+                putExtra(ArticleDetailActivity.ARTICLE_DETAIL_EXTRA, article)
+            }
+            context.startActivity(intent)
         }
     }
 
