@@ -1,6 +1,8 @@
 package com.team.temara.data.remote.response
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 data class ArticleResponse(
     @field:SerializedName("status")
@@ -16,6 +18,7 @@ data class ArticleResponse(
     val result: ArticleList
 )
 
+@Parcelize
 data class ArticleList(
     @field:SerializedName("id")
     val id: String,
@@ -35,4 +38,4 @@ data class ArticleList(
     @field:SerializedName("updatedAt")
     val updatedAt: String
 
-)
+) : Parcelable

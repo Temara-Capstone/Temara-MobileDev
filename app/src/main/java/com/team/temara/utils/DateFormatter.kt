@@ -14,4 +14,12 @@ object DateFormatter {
             .withZone(ZoneId.of(targetTimeZone))
         return formatter.format(instant)
     }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun formaArticletDate(currentDateString: String?, targetTimeZone: String): String {
+        val instant= Instant.parse(currentDateString)
+        val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy | HH:mm")
+            .withZone(ZoneId.of(targetTimeZone))
+        return formatter.format(instant)
+    }
 }
