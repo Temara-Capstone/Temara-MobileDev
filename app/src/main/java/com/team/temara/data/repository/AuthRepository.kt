@@ -9,6 +9,7 @@ import com.team.temara.data.remote.response.LoginResponse
 import com.team.temara.data.remote.response.QuotesResponse
 import com.team.temara.data.remote.response.RegisterResponse
 import com.team.temara.data.remote.response.Result
+import com.team.temara.data.remote.response.UpdatePasswordResponse
 import com.team.temara.data.remote.response.UpdateUserResponse
 import com.team.temara.data.remote.response.resultData
 import com.team.temara.data.remote.response.resultQuotes
@@ -109,6 +110,27 @@ class AuthRepository(
                 gender,
                 no_hp
             )
+
+            if (response.error) {
+                emit(Result.Error(response.message))
+            } else {
+                emit(Result.Success(response))
+            }
+        } catch (e: Exception) {
+            emit(Result.Error(e.message.toString()))
+        }
+    }
+
+    fun updatePassword(userId: String, password: String): LiveData<Result<UpdatePasswordResponse>> = liveData {
+        emit(Result.Loading)
+
+        try {
+            val response = apiService.updatePassword(
+                userId,
+                password
+            )
+
+            Log.d("UpdatePasswordResponse", response.toString())
 
             if (response.error) {
                 emit(Result.Error(response.message))
