@@ -11,9 +11,9 @@ import com.team.temara.ui.article.ArticleDetailActivity
 class ArticleAdapter(private val context: Context) : RecyclerView.Adapter<ArticleAdapter.ViewHolder>() {
     private val articleList: MutableList<ArticleList> = mutableListOf()
 
-    fun setArticleList(list: ArticleList) {
+    fun setArticleList(list: List<ArticleList>) {
         articleList.clear()
-        articleList.addAll(listOf(list))
+        articleList.addAll(list)
         notifyDataSetChanged()
     }
 

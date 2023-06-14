@@ -27,7 +27,7 @@
     <string name="name_desc">Masukkan nama anda</string>
     <string name="home">Beranda</string>
     <string name="article">Artikel</string>
-    <string name="forum">Ruang Bicara</string>
+    <string name="forum">Forum</string>
     <string name="profile">Profil</string>
     <string name="contenDesc_home">Background Home Fragment</string>
     <string name="selamat_sore">Selamat Sore,</string>
@@ -101,4 +101,5 @@
     <string name="born">Tanggal Lahir</string>
     <string name="createdat">CreatedAt</string>
     <string name="updatedat">UpdatedAt</string>
+    <string name="add_button">Add Button</string>
 </resources>

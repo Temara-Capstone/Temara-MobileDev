@@ -12,6 +12,7 @@ import com.team.temara.data.remote.response.Result
 import com.team.temara.databinding.ChatFragmentBinding
 import com.team.temara.ui.chat.ChatActivity
 import com.team.temara.ui.info.InfoUserActivity
+import com.team.temara.ui.profil.personaldata.PersonalDataActivity
 
 class ChatFragment : Fragment() {
     private var _binding: ChatFragmentBinding? = null
@@ -46,6 +47,9 @@ class ChatFragment : Fragment() {
             cvBot.setOnClickListener {
                 startActivity(Intent(context, ChatActivity::class.java))
             }
+            ivUser.setOnClickListener {
+                startActivity(Intent(context, PersonalDataActivity::class.java))
+            }
         }
 
 
@@ -66,6 +70,10 @@ class ChatFragment : Fragment() {
                                 is Result.Success -> {
                                     val result = it.result
                                     binding.tvName.text = result.name
+
+                                    Glide.with(requireContext())
+                                        .load(result.image)
+                                        .into(binding.ivUser)
                                 }
                             }
                         }

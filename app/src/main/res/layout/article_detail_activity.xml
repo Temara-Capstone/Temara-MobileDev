@@ -15,6 +15,7 @@
         android:id="@+id/rlBackground"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:focusable="true"
         android:background="@color/green_500"
         android:padding="81dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,6 +27,7 @@
         android:id="@+id/btnBack"
         android:layout_width="45dp"
         android:layout_height="45dp"
+        android:focusable="true"
         android:background="@drawable/ic_arrow_left"
         android:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,6 +41,7 @@
         android:layout_height="wrap_content"
         android:text="@string/article"
         android:textSize="20sp"
+        android:focusable="true"
         android:fontFamily="@font/epilogue_bold"
         android:textColor="@color/white"
         app:layout_constraintLeft_toRightOf="@id/btnBack"
@@ -116,13 +119,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginEnd="18dp"
         android:fontFamily="@font/epilogue_regular"
         android:lineSpacingMultiplier="1.3"
         android:text="@string/preview_desc_article_full"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvUpdatedAt" />
+        app:layout_constraintTop_toBottomOf="@id/tvUpdatedAt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

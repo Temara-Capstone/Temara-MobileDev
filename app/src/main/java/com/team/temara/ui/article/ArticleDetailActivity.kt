@@ -22,6 +22,10 @@ class ArticleDetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setup()
+
+        binding.btnBack.setOnClickListener {
+            onBackPressed()
+        }
     }
 
     @RequiresApi(Build.VERSION_CODES.O)

@@ -17,6 +17,7 @@ import com.team.temara.adapter.ChatAdapter
 import com.team.temara.adapter.RecommendedQuestionsAdapter
 import com.team.temara.data.remote.response.Result
 import com.team.temara.databinding.ChatActivityBinding
+import com.team.temara.ui.login.LoginActivity
 import com.team.temara.ui.profil.personaldata.PersonalDataViewModel
 import com.team.temara.utils.Message
 import okhttp3.Call
@@ -97,15 +98,12 @@ class ChatActivity : AppCompatActivity() {
                             }
 
                             is Result.Success -> {
-                                val result = it.result
-
-                                Glide.with(this)
-                                    .load(result.image)
-                                    .into(binding.ivUser)
                             }
                         }
                     }
                 }
+            } else {
+                startActivity(Intent(this, LoginActivity::class.java))
             }
         }
     }

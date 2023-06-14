@@ -58,7 +58,7 @@ class PersonalDataActivity : AppCompatActivity() {
                     val myToken = "Bearer $token"
                     personalDataViewModel.checkId().observe(this) { userId ->
                         val myId = userId ?: ""
-                        updateData(myId)
+                        updateData(myToken, myId)
                     }
                 } else {
                     startActivity(Intent(this, LoginActivity::class.java))
@@ -137,14 +137,14 @@ class PersonalDataActivity : AppCompatActivity() {
         isDataLoaded = false
     }
 
-    private fun updateData(userId: String) {
+    private fun updateData(token: String, userId: String) {
         val name = binding.etFullName.text.toString()
         val email = binding.etEmail.text.toString()
         val gender = if (binding.rbPria.isChecked) "Pria" else "Wanita"
         val dateOfBirth = binding.btnBorn.text.toString()
         val phoneNumber = binding.etNohp.text.toString()
 
-        personalDataViewModel.updateUser(userId, name, email, dateOfBirth, gender, phoneNumber).observe(this) {
+        personalDataViewModel.updateUser(token, userId, name, email, dateOfBirth, gender, phoneNumber).observe(this) {
             when (it) {
                 is Result.Loading -> {
                     binding.progressBar.visibility = View.VISIBLE

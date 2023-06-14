@@ -1,4 +1,4 @@
-package com.team.temara.ui.main.fragment.home
+package com.team.temara.ui.main.fragment.forum
 
 import android.content.Context
 import androidx.lifecycle.LiveData
@@ -8,10 +8,9 @@ import androidx.lifecycle.asLiveData
 import com.team.temara.data.remote.AppModule
 import com.team.temara.data.remote.response.Result
 import com.team.temara.data.remote.response.resultData
-import com.team.temara.data.remote.response.resultQuotes
 import com.team.temara.data.repository.AuthRepository
 
-class HomeViewModel(
+class ForumViewModel(
     private val authRepository: AuthRepository
 ) : ViewModel() {
 
@@ -23,27 +22,28 @@ class HomeViewModel(
         return authRepository.getId().asLiveData()
     }
 
-    fun getQuotes(token: String): LiveData<Result<resultQuotes>> = authRepository.getQuotes(token)
-
     fun getUser(token: String, userId: String): LiveData<Result<resultData>> = authRepository.getUser(token, userId)
 
-    class HomeViewModelFactory private constructor(
+
+
+
+    class ForumViewModelFactory private constructor(
         private val authRepository: AuthRepository
     ) : ViewModelProvider.NewInstanceFactory() {
         @Suppress("UNCHECKED_CAST")
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            if(modelClass.isAssignableFrom(HomeViewModel::class.java)) {
-                return HomeViewModel(authRepository) as T
+            if(modelClass.isAssignableFrom(ForumViewModel::class.java)) {
+                return ForumViewModel(authRepository) as T
             }
             throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
         }
 
         companion object {
             @Volatile
-            private var instance: HomeViewModelFactory? = null
+            private var instance: ForumViewModelFactory? = null
 
-            fun getInstance(context: Context): HomeViewModelFactory = instance ?: synchronized(this) {
-                instance ?: HomeViewModelFactory(
+            fun getInstance(context: Context): ForumViewModelFactory = instance ?: synchronized(this) {
+                instance ?: ForumViewModelFactory(
                     AppModule.provideAuthRepository(context)
                 )
             }.also { instance = it }

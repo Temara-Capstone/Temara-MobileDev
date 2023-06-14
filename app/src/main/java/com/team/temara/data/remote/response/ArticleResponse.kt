@@ -15,7 +15,7 @@ data class ArticleResponse(
     val message: String,
 
     @field:SerializedName("result")
-    val result: ArticleList
+    val resultArticle: List<ArticleList>
 )
 
 @Parcelize

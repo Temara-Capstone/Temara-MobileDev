@@ -21,7 +21,7 @@
         tools:layout="@layout/chat_fragment"/>
     <fragment
         android:id="@+id/nav_forum"
-        android:name="com.team.temara.ui.main.fragment.ForumFragment"
+        android:name="com.team.temara.ui.main.fragment.forum.ForumFragment"
         android:label="Forum"
         tools:layout="@layout/forum_fragment"/>
     <fragment

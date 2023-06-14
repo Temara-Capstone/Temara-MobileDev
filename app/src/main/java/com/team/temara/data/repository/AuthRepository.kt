@@ -6,10 +6,12 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.liveData
 import com.team.temara.data.datastore.AuthPreferences
 import com.team.temara.data.remote.response.LoginResponse
+import com.team.temara.data.remote.response.QuotesResponse
 import com.team.temara.data.remote.response.RegisterResponse
 import com.team.temara.data.remote.response.Result
 import com.team.temara.data.remote.response.UpdateUserResponse
 import com.team.temara.data.remote.response.resultData
+import com.team.temara.data.remote.response.resultQuotes
 import com.team.temara.data.remote.retrofit.ApiService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -76,11 +78,30 @@ class AuthRepository(
         }
     }
 
-    fun updateUser(userId: String, name: String, email: String, dateofbirth: String, gender: String, no_hp: String): LiveData<Result<UpdateUserResponse>> = liveData {
+
+    fun getQuotes(token: String): LiveData<Result<resultQuotes>> = liveData {
+        emit(Result.Loading)
+
+        try {
+            val response = apiService.getQuotes(token)
+
+            if (response.error) {
+                emit(Result.Error(response.message))
+            } else {
+                val quotes = response.result
+                emit(Result.Success(quotes))
+            }
+        } catch (e: Exception) {
+            emit(Result.Error(e.message.toString()))
+        }
+    }
+
+    fun updateUser(token: String, userId: String, name: String, email: String, dateofbirth: String, gender: String, no_hp: String): LiveData<Result<UpdateUserResponse>> = liveData {
         emit(Result.Loading)
 
         try {
             val response = apiService.updateUser(
+                token,
                 userId,
                 name,
                 email,
@@ -88,8 +109,6 @@ class AuthRepository(
                 gender,
                 no_hp
             )
-
-            Log.d("UpdateUserResponse", response.toString())
 
             if (response.error) {
                 emit(Result.Error(response.message))
@@ -100,6 +119,7 @@ class AuthRepository(
             emit(Result.Error(e.message.toString()))
         }
     }
+
 
 
     fun getToken(): LiveData<String> = authPreferences.getToken().asLiveData()

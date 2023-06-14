@@ -11,6 +11,7 @@
         android:layout_height="@dimen/_55sdp"
         android:layout_marginStart="@dimen/_31sdp"
         android:layout_marginTop="@dimen/_31sdp"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@tools:sample/avatars" />
@@ -22,6 +23,7 @@
         android:layout_marginLeft="@dimen/_7sdp"
         android:layout_marginTop="@dimen/_4sdp"
         android:fontFamily="@font/epilogue_bold"
+        android:maxEms="8"
         android:text="@string/name_user"
         android:textSize="@dimen/_14ssp"
         app:layout_constraintLeft_toRightOf="@id/ivUser"

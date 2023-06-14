@@ -10,14 +10,14 @@ import com.team.temara.data.remote.retrofit.ApiService
 class ArticleRepository(
     private val apiService: ApiService,
 ) {
-    fun getArticle(token: String): LiveData<Result<ArticleList>> = liveData {
+    fun getArticle(token: String): LiveData<Result<List<ArticleList>>> = liveData {
         emit(Result.Loading)
         try {
             val response = apiService.getArticle(token)
             if (response.error) {
                 emit(Result.Error(response.message))
             } else {
-                val article = response.result
+                val article = response.resultArticle
                 emit(Result.Success(article))
             }
         } catch(e: Exception) {

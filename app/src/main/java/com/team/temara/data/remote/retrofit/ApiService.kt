@@ -2,6 +2,7 @@ package com.team.temara.data.remote.retrofit
 
 import com.team.temara.data.remote.response.ArticleResponse
 import com.team.temara.data.remote.response.LoginResponse
+import com.team.temara.data.remote.response.QuotesResponse
 import com.team.temara.data.remote.response.RegisterResponse
 import com.team.temara.data.remote.response.UpdateUserResponse
 import com.team.temara.data.remote.response.UserResponse
@@ -13,6 +14,7 @@ import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Multipart
 import retrofit2.http.POST
+import retrofit2.http.PUT
 import retrofit2.http.Part
 import retrofit2.http.Path
 
@@ -40,8 +42,9 @@ interface ApiService {
     ): UserResponse
 
     @FormUrlEncoded
-    @POST("profile/update")
+    @PUT("profile/update")
     suspend fun updateUser(
+        @Header("Authorization") token: String,
         @Field("id") userId: String,
         @Field("name") name: String,
         @Field("email") email: String,
@@ -54,6 +57,11 @@ interface ApiService {
     suspend fun getArticle(
         @Header("Authorization") token: String,
     ): ArticleResponse
+
+    @GET("quotes")
+    suspend fun getQuotes(
+        @Header("Authorization") token: String,
+    ): QuotesResponse
 
 
 }

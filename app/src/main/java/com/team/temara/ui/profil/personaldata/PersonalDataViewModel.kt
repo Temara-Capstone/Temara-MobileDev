@@ -16,9 +16,9 @@ class PersonalDataViewModel(
     private val authRepository: AuthRepository
 ) : ViewModel() {
 
-    fun updateUser(userId: String, name: String, email: String, dateOfBirth: String, gender: String, no_hp: String) =
-        authRepository.updateUser(userId, name, email, dateOfBirth, gender, no_hp).also {
-            Log.d("UpdateUser", "UserID: $userId, Name: $name, Email: $email, Date of Birth: $dateOfBirth, Gender: $gender, Phone Number: $no_hp")
+    fun updateUser(token: String, userId: String, name: String, email: String, dateOfBirth: String, gender: String, no_hp: String) =
+        authRepository.updateUser(token, userId, name, email, dateOfBirth, gender, no_hp).also {
+            Log.d("UpdateUser", " Token: $token, UserID: $userId, Name: $name, Email: $email, Date of Birth: $dateOfBirth, Gender: $gender, Phone Number: $no_hp")
         }
 
     fun checkToken(): LiveData<String> {

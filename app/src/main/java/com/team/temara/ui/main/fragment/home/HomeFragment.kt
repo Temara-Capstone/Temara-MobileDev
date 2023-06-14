@@ -1,14 +1,17 @@
 package com.team.temara.ui.main.fragment.home
 
+import ArticleAdapter
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.team.temara.data.remote.response.Result
 import com.team.temara.databinding.HomeFragmentBinding
+import com.team.temara.ui.main.fragment.article.ArticleFragmentViewModel
 import com.team.temara.ui.main.fragment.profile.ProfileFragmentViewModel
 import java.util.Calendar
 
@@ -19,6 +22,12 @@ class HomeFragment : Fragment() {
 
     private val homeViewModel: HomeViewModel by viewModels {
         HomeViewModel.HomeViewModelFactory.getInstance(requireContext())
+    }
+
+    private lateinit var articleAdapter: ArticleAdapter
+
+    private val articleViewModel: ArticleFragmentViewModel by viewModels {
+        ArticleFragmentViewModel.ArticleFragmentViewModelFactory.getInstance(requireContext())
     }
 
     private var isDataLoaded = false
@@ -66,6 +75,55 @@ class HomeFragment : Fragment() {
                 }
             }
             isDataLoaded = true
+        }
+
+        articleAdapter = ArticleAdapter(requireContext())
+        binding.rvRecArticle.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = articleAdapter
+        }
+
+        articleViewModel.checkToken().observe(viewLifecycleOwner) { token ->
+            if (token != "null") {
+                val myToken = "Bearer $token"
+                articleViewModel.getStory(myToken).observe(viewLifecycleOwner) {
+                    when (it) {
+                        is Result.Success -> {
+                            val articleList = it.result
+                            articleAdapter.setArticleList(articleList)
+                        }
+
+                        is Result.Error -> {
+
+                        }
+
+                        is Result.Loading -> {
+                        }
+                    }
+                }
+            }
+        }
+
+        homeViewModel.checkToken().observe(viewLifecycleOwner) { token ->
+            if(token != "null") {
+                val myToken = "Bearer $token"
+                homeViewModel.getQuotes(myToken).observe(viewLifecycleOwner) {
+                    when(it) {
+                        is Result.Success -> {
+                            val quotes = it.result
+                            binding.tvQuotes.text = quotes.quote
+                        }
+
+                        is Result.Error -> {
+
+                        }
+
+                        is Result.Loading -> {
+
+                        }
+                    }
+                }
+            }
         }
     }
 
