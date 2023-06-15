@@ -68,6 +68,8 @@ class PersonalDataActivity : AppCompatActivity() {
 
 
         if (!isDataLoaded) {
+
+
             personalDataViewModel.checkToken().observe(this) { token ->
                 if (token != "null") {
                     val myToken = "Bearer $token"
@@ -144,7 +146,9 @@ class PersonalDataActivity : AppCompatActivity() {
         val dateOfBirth = binding.btnBorn.text.toString()
         val phoneNumber = binding.etNohp.text.toString()
 
-        personalDataViewModel.updateUser(token, userId, name, email, dateOfBirth, gender, phoneNumber).observe(this) {
+        val updatedPhoneNumber = phoneNumber ?: ""
+
+        personalDataViewModel.updateUser(token, userId, name, email, dateOfBirth, gender, updatedPhoneNumber).observe(this) {
             when (it) {
                 is Result.Loading -> {
                     binding.progressBar.visibility = View.VISIBLE

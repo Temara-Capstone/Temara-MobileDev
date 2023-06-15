@@ -102,4 +102,5 @@
     <string name="createdat">CreatedAt</string>
     <string name="updatedat">UpdatedAt</string>
     <string name="add_button">Add Button</string>
+    <string name="eight_characters">Minimal password yang diinput 8 karakter yah :)</string>
 </resources>

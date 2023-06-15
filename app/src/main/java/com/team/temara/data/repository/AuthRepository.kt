@@ -121,11 +121,12 @@ class AuthRepository(
         }
     }
 
-    fun updatePassword(userId: String, password: String): LiveData<Result<UpdatePasswordResponse>> = liveData {
+    fun updatePassword(token: String, userId: String, password: String): LiveData<Result<UpdatePasswordResponse>> = liveData {
         emit(Result.Loading)
 
         try {
             val response = apiService.updatePassword(
+                token,
                 userId,
                 password
             )

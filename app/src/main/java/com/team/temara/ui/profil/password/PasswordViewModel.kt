@@ -15,8 +15,8 @@ class PasswordViewModel(
     private val authRepository: AuthRepository
 ) : ViewModel() {
 
-    fun updatePassword(userId: String, password: String, ) =
-        authRepository.updatePassword(userId, password).also {
+    fun updatePassword(token:String, userId: String, password: String, ) =
+        authRepository.updatePassword(token, userId, password).also {
             Log.d("UpdatePassword", "UserID: $userId, Password: $password")
         }
 

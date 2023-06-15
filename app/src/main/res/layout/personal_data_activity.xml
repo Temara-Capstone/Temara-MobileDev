@@ -187,12 +187,13 @@
         android:hint="@string/no_hp"
         android:fontFamily="@font/epilogue_medium"
         android:textSize="@dimen/_9ssp"
+        android:maxLength="12"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
         android:paddingStart="@dimen/_18sdp"
         android:layout_marginTop="@dimen/_5sdp"
         android:layout_marginStart="@dimen/_1sdp"
-        android:inputType="text"/>
+        android:inputType="number"/>
 
     <TextView
         android:id="@+id/tvBorn"

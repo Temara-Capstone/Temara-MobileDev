@@ -55,10 +55,11 @@ interface ApiService {
     ): UpdateUserResponse
 
     @FormUrlEncoded
-    @POST("profile/update")
+    @PUT("changePassword")
     suspend fun updatePassword(
+        @Header("Authorization") token: String,
         @Field("id") userId: String,
-        @Field("password") password: String
+        @Field("newPassword") password: String
     ): UpdatePasswordResponse
 
     @GET("articles")
