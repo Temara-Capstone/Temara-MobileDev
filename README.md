@@ -1,6 +1,3 @@
-# Temara-MobileDev
-Repository Source Code Temara (Teman Bicara) Mobile Development - For Team
-
 <img src="https://github.com/Temara-Capstone/.github/blob/main/Logo%20Temara.png" alt="Logo of the project" align="right">
 
 # Mobile Developement
