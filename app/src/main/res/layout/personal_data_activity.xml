@@ -46,14 +46,6 @@
         app:layout_constraintTop_toBottomOf="@id/tvPersonalData"
         tools:src="@tools:sample/avatars"/>
 
-    <ImageView
-        android:id="@+id/btnGallery"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:background="@drawable/ic_gallery"
-        app:layout_constraintEnd_toEndOf="@id/ivUser"
-        app:layout_constraintStart_toEndOf="@id/ivUser"
-        app:layout_constraintBottom_toBottomOf="@id/ivUser"/>
 
     <TextView
         android:id="@+id/tvName"

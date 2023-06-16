@@ -103,4 +103,6 @@
     <string name="updatedat">UpdatedAt</string>
     <string name="add_button">Add Button</string>
     <string name="eight_characters">Minimal password yang diinput 8 karakter yah :)</string>
+    <string name="camera">Camera</string>
+    <string name="rotate_picture">Rotate Picture</string>
 </resources>

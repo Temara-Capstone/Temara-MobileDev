@@ -35,7 +35,6 @@ class PersonalDataActivity : AppCompatActivity() {
     }
 
     private var isDataLoaded = false
-    private var getUserFile: File? = null
 
 
 
@@ -48,9 +47,6 @@ class PersonalDataActivity : AppCompatActivity() {
             onBackPressed()
         }
 
-        binding.btnGallery.setOnClickListener {
-            openGallery()
-        }
 
         binding.btnSave.setOnClickListener {
             personalDataViewModel.checkToken().observe(this) { token ->
@@ -164,24 +160,7 @@ class PersonalDataActivity : AppCompatActivity() {
         }
     }
 
-    private val launchGallery = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) {
-        if(it.resultCode == RESULT_OK) {
-            val imgChoose: Uri = it.data?.data as Uri
-            val file = uriToFile(imgChoose, this)
-            getUserFile = file
-            binding.ivUser.setImageURI(imgChoose)
-        }
-    }
 
-    private fun openGallery() {
-        val galIntent = Intent()
-        galIntent.action = ACTION_GET_CONTENT
-        galIntent.type = "image/*"
-        val choose = Intent.createChooser(galIntent, "Select Photo")
-        launchGallery.launch(choose)
-    }
 
 
 }

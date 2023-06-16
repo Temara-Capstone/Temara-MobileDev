@@ -49,7 +49,7 @@ class ForumViewModel(
             fun getInstance(context: Context): ForumViewModelFactory = instance ?: synchronized(this) {
                 instance ?: ForumViewModelFactory(
                     AppModule.provideAuthRepository(context),
-                    AppModule.provideForumRepository()
+                    AppModule.provideForumRepository(context)
                 )
             }.also { instance = it }
         }

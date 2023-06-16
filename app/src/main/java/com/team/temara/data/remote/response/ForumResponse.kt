@@ -32,10 +32,21 @@ data class ForumList(
     @field:SerializedName("images")
     val images: String,
 
-    @field:SerializedName("created_at")
+    @field:SerializedName("createdAt")
     val createdAt: String,
 
-    @field:SerializedName("updated_at")
+    @field:SerializedName("updatedAt")
     val updatedAt: String
 
 ) : Parcelable
+
+data class PostForumResponse(
+    @field:SerializedName("status")
+    val status: String,
+
+    @field:SerializedName("error")
+    val error: Boolean,
+
+    @field:SerializedName("message")
+    val message: String
+)

@@ -70,7 +70,7 @@ class ForumFragment : Fragment() {
                     when (it) {
                         is Result.Success -> {
                             binding.progressBar.visibility = View.GONE
-                            val forumList = it.result
+                            val forumList = it.result.reversed()
                             forumAdapter.setForumList(forumList)
                         }
 

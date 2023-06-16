@@ -3,6 +3,7 @@ package com.team.temara.data.remote.retrofit
 import com.team.temara.data.remote.response.ArticleResponse
 import com.team.temara.data.remote.response.ForumResponse
 import com.team.temara.data.remote.response.LoginResponse
+import com.team.temara.data.remote.response.PostForumResponse
 import com.team.temara.data.remote.response.QuotesResponse
 import com.team.temara.data.remote.response.RegisterResponse
 import com.team.temara.data.remote.response.UpdatePasswordResponse
@@ -77,6 +78,15 @@ interface ApiService {
     suspend fun getForum(
         @Header("Authorization") token: String
     ): ForumResponse
+
+    @Multipart
+    @POST("forum/post")
+    suspend fun postForum(
+        @Header("Authorization") token: String,
+        @Part("user_id") userId: String,
+        @Part image: MultipartBody.Part? = null,
+        @Part("text") text: RequestBody
+    ): PostForumResponse
 
 
 }

@@ -40,7 +40,7 @@ object AppModule {
         return ArticleRepository.getInstance(provideApiService())
     }
 
-    fun provideForumRepository(): ForumRepository {
+    fun provideForumRepository(context: Context): ForumRepository {
         return ForumRepository.getInstance(provideApiService())
     }
 
