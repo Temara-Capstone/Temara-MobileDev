@@ -9,6 +9,10 @@
 - Send your message and wait for the response
 - Share your stories in forum and get response from other user
 
+## Preview App
+
+<img src="https://github.com/Temara-Capstone/.github/blob/main/sasa.jpg" alt="Screenshot">
+
 ## Features
 
 - Set your personal data
