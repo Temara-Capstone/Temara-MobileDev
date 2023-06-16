@@ -19,3 +19,14 @@ Repository Source Code Temara (Teman Bicara) Mobile Development - For Team
 - Counseling menu
 - Answer your question with chatbot
 - Panic button for emergency situation
+
+#Tech Stack
+- Kotlin Programming Language
+- Koin Dependency Injection
+- Flow
+- Jetpack Library
+- Lifecycle
+- UI
+- Data
+- Retrofit2
+- Glide
