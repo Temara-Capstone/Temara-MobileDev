@@ -30,6 +30,7 @@ import okhttp3.Response
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.IOException
+import java.util.concurrent.TimeUnit
 
 class ChatActivity : AppCompatActivity() {
 
@@ -40,7 +41,15 @@ class ChatActivity : AppCompatActivity() {
     private var clickCount = 0
     private var isRecommendationClickable = true
 
-    private val client = OkHttpClient()
+    private val client: OkHttpClient by lazy {
+        createCustomOkHttpClient()
+    }
+
+    private fun createCustomOkHttpClient(): OkHttpClient {
+        return OkHttpClient.Builder()
+            .readTimeout(30, TimeUnit.SECONDS)
+            .build()
+    }
 
     private val binding: ChatActivityBinding by lazy {
         ChatActivityBinding.inflate(layoutInflater)

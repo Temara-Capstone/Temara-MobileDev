@@ -2,7 +2,6 @@ package com.team.temara.ui.main.fragment.forum
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +13,7 @@ import com.bumptech.glide.Glide
 import com.team.temara.adapter.ForumAdapter
 import com.team.temara.data.remote.response.Result
 import com.team.temara.databinding.ForumFragmentBinding
-import com.team.temara.ui.main.fragment.home.HomeViewModel
+import com.team.temara.ui.forum.create.CreatePostActivity
 import com.team.temara.ui.profil.personaldata.PersonalDataActivity
 
 class ForumFragment : Fragment() {
@@ -70,17 +69,17 @@ class ForumFragment : Fragment() {
                 forumViewModel.getForum(myToken).observe(viewLifecycleOwner) {
                     when (it) {
                         is Result.Success -> {
+                            binding.progressBar.visibility = View.GONE
                             val forumList = it.result
                             forumAdapter.setForumList(forumList)
-                            Toast.makeText(requireContext(), "Sukses Load Data", Toast.LENGTH_SHORT).show()
                         }
 
                         is Result.Error -> {
-
+                            binding.progressBar.visibility = View.GONE
                         }
 
                         is Result.Loading -> {
-
+                            binding.progressBar.visibility = View.VISIBLE
                         }
                     }
                 }
@@ -96,6 +95,9 @@ class ForumFragment : Fragment() {
         binding.apply {
             profileImage.setOnClickListener {
                 startActivity(Intent(context, PersonalDataActivity::class.java))
+            }
+            btnPost.setOnClickListener {
+                startActivity(Intent(context, CreatePostActivity::class.java))
             }
         }
 

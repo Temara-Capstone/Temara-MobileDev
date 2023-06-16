@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide
 import com.team.temara.data.remote.response.ForumList
 import com.team.temara.databinding.ForumPostItemBinding
 import com.team.temara.ui.article.ArticleDetailActivity
+import com.team.temara.ui.forum.inpost.ForumPostActivity
 import com.team.temara.utils.DateFormatter
 import java.util.TimeZone
 
@@ -48,8 +49,8 @@ class ForumAdapter (private val context: Context) : RecyclerView.Adapter<ForumAd
         }
 
         holder.binding.cvForumPost.setOnClickListener {
-            val intent = Intent(holder.itemView.context, ArticleDetailActivity::class.java).apply {
-                putExtra(ArticleDetailActivity.ARTICLE_DETAIL_EXTRA, forum)
+            val intent = Intent(holder.itemView.context, ForumPostActivity::class.java).apply {
+                putExtra(ForumPostActivity.FORUM_DETAIL_EXTRA, forum)
             }
             context.startActivity(intent)
         }
