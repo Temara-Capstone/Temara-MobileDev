@@ -13,6 +13,7 @@ import com.team.temara.data.remote.retrofit.ApiConfig
 import com.team.temara.data.remote.retrofit.ApiService
 import com.team.temara.data.repository.ArticleRepository
 import com.team.temara.data.repository.AuthRepository
+import com.team.temara.data.repository.ForumRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -37,6 +38,10 @@ object AppModule {
 
     fun provideArticleRepository(): ArticleRepository {
         return ArticleRepository.getInstance(provideApiService())
+    }
+
+    fun provideForumRepository(): ForumRepository {
+        return ForumRepository.getInstance(provideApiService())
     }
 
     private fun providePreferencesDataStore(context: Context): DataStore<Preferences> {

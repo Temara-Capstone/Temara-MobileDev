@@ -9,9 +9,11 @@ import com.team.temara.data.remote.AppModule
 import com.team.temara.data.remote.response.Result
 import com.team.temara.data.remote.response.resultData
 import com.team.temara.data.repository.AuthRepository
+import com.team.temara.data.repository.ForumRepository
 
 class ForumViewModel(
-    private val authRepository: AuthRepository
+    private val authRepository: AuthRepository,
+    private val forumRepository: ForumRepository
 ) : ViewModel() {
 
     fun checkToken(): LiveData<String> {
@@ -24,16 +26,18 @@ class ForumViewModel(
 
     fun getUser(token: String, userId: String): LiveData<Result<resultData>> = authRepository.getUser(token, userId)
 
+    fun getForum(token: String) = forumRepository.getForum(token)
 
 
 
     class ForumViewModelFactory private constructor(
-        private val authRepository: AuthRepository
+        private val authRepository: AuthRepository,
+        private val forumRepository: ForumRepository
     ) : ViewModelProvider.NewInstanceFactory() {
         @Suppress("UNCHECKED_CAST")
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
             if(modelClass.isAssignableFrom(ForumViewModel::class.java)) {
-                return ForumViewModel(authRepository) as T
+                return ForumViewModel(authRepository, forumRepository) as T
             }
             throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
         }
@@ -44,7 +48,8 @@ class ForumViewModel(
 
             fun getInstance(context: Context): ForumViewModelFactory = instance ?: synchronized(this) {
                 instance ?: ForumViewModelFactory(
-                    AppModule.provideAuthRepository(context)
+                    AppModule.provideAuthRepository(context),
+                    AppModule.provideForumRepository()
                 )
             }.also { instance = it }
         }

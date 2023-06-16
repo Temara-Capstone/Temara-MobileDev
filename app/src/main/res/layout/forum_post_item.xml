@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvForumPost"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     
@@ -10,7 +11,7 @@
         android:id="@+id/ivUser"
         android:layout_width="33dp"
         android:layout_height="33dp"
-        tools:src="@tools:sample/avatars"
+        android:src="@drawable/happy"
         android:layout_marginTop="20dp"
         android:layout_marginStart="30dp"
         app:layout_constraintStart_toStartOf="parent"
