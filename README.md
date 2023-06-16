@@ -19,14 +19,37 @@ Repository Source Code Temara (Teman Bicara) Mobile Development - For Team
 - Counseling menu
 - Answer your question with chatbot
 - Panic button for emergency situation
+- Discussion Forum
 
-#Tech Stack
-- Kotlin Programming Language
-- Koin Dependency Injection
-- Flow
-- Jetpack Library
-- Lifecycle
-- UI
-- Data
-- Retrofit2
-- Glide
+## Library
+  - Lifecycle & Livedata
+  - Navigation
+  - Kotlinx-coroutines
+  - Retrofit2
+  - OkHttp3
+  - Intuit SDP&SSP
+  - Data Store
+  - Glide
+  - Gson
+  - Parcelize
+  - socket.io
+
+## Getting Started Application
+
+  - ### Prerequisites
+      - ##### Tools Sofware
+        - [Android Studio](https://developer.android.com/studio)
+        - JRE (Java Runtime Environment) or JDK (Java Development Kit).
+
+      - #### Installation
+        - Download the zip code or clone this repository and import into Android Studio    
+            ```
+               https://github.com/Temara-Capstone/Temara-MobileDev.git
+            ``` 
+        - Run the app in Android Studio
+           
+  ## Acknowledgements
+  * [Clean Architecture Guide](https://developer.android.com/jetpack/guide)
+  * [Android Application Fundamental](https://developer.android.com/guide/components/fundamentals)
+  * [Dependency injection](https://developer.android.com/training/dependency-injection)
+
